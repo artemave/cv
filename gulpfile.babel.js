@@ -17,9 +17,15 @@ gulp.task('serve', () => {
   gulp.watch('resume.json', ['build']);
 });
 
-gulp.task('build', $.shell.task(
-  'resume export index --theme flat --format html'
-));
+gulp.task('build', () => {
+  return gulp.src('resume.json')
+    .pipe($.resume({
+      format: 'html',
+      theme: 'flat'
+    }))
+    .pipe($.rename('index.html'))
+    .pipe(gulp.dest('.'));
+});
 
 gulp.task('default', ['build'], () => {
   gulp.start('serve');
