@@ -1,6 +1,6 @@
 # cv
 
-[JSON Resume format](https://jsonresume.org/) CV for [Alec Rust](http://www.alecrust.com/). Builds to `index.html`.
+CV for [Alec Rust](http://www.alecrust.com/) in [JSON Resume format](https://jsonresume.org/). Builds to `index.html`, hosted with GitHub Pages at: http://cv.alecrust.com/
 
 ## Quick Start
 
