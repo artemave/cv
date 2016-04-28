@@ -9,7 +9,7 @@ gulp.task('serve', () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ''
+      baseDir: '.'
     }
   });
 
