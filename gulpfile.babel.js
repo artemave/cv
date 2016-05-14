@@ -12,7 +12,8 @@ var paths = {
 gulp.task('styles', ['sort-rules'], () => {
   return gulp.src(paths.styles)
     .pipe($.postcss([
-      require('autoprefixer')
+      require('autoprefixer'),
+      require('postcss-import')
     ], { parser: sugarss }))
     .pipe($.rename('style.css'))
     .pipe(gulp.dest('.'));
