@@ -40,3 +40,6 @@ gulp.task('deploy', () => {
 gulp.task('watch', ['styles'], () => {
   gulp.watch(paths.styles, ['styles']);
 });
+
+gulp.task('build', ['styles']);
+gulp.task('default', ['build']);
