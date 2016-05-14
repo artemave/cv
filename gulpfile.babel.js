@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
 import sugarss from 'sugarss';
 
 const $ = gulpLoadPlugins();
