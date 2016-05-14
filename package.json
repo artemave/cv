@@ -12,7 +12,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "start": "resume serve",
+    "start": "resume serve --resume src/resume.json",
     "deploy": "gulp deploy"
   },
   "devDependencies": {
