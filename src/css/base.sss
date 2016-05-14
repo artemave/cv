@@ -60,6 +60,14 @@ h4
   margin-bottom: 10px
   font-size: 18px
 
+h4 span:first-child
+  color: #000
+  font-weight: bold
+
+@media (max-width: 480px)
+  h1
+    font-size: 26px
+
 section
   margin-top: 30px
 
@@ -120,6 +128,12 @@ em
   font-weight: normal
   font-style: normal
 
+// Dates
+@media (max-width: 480px)
+  .date
+    margin-bottom: 5px
+    font-size: 14px
+
 // Container
 .container
   margin-right: auto
@@ -131,6 +145,20 @@ em
 @media (min-width: 768px)
   .container
     width: 750px
+
+// Bootstrap grid overrides
+.col-sm-6
+  margin-bottom: 10px
+
+.col-sm-12 h4
+  margin-top: 12px
+
+.col-sm-12 + .col-sm-12
+  margin-top: 30px
+
+@media (max-width: 768px)
+  .col-sm-6:last-child
+    margin-bottom: 0
 
 // Utilities
 .clearfix:before,

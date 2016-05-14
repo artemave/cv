@@ -1,0 +1,33 @@
+#profiles .network
+  text-transform: capitalize
+
+#work .position,
+#volunteer .position
+  margin-bottom: 8px
+  font-weight: bold
+
+#education .area
+  font-weight: bold
+
+#education .area:before
+  margin-right: 6px
+  content: "\f0d7"
+  font: 16px Octicons
+
+#education .studyType
+  margin-left: 25px
+
+#awards .summary,
+#publications .summary
+  margin-top: 8px
+
+#publications .website a:before
+  content: attr(href)
+
+@media (max-width: 768px)
+  #publications .website a:before
+    content: "View publication"
+
+@media (max-width: 480px)
+  #actions
+    display: none
