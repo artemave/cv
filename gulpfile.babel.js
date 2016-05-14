@@ -9,7 +9,7 @@ var paths = {
   styles: 'src/css/*.sss'
 };
 
-gulp.task('css', ['sort-rules'], () => {
+gulp.task('styles', ['sort-rules'], () => {
   return gulp.src(paths.styles)
     .pipe($.postcss([
       require('autoprefixer')
@@ -33,4 +33,8 @@ gulp.task('deploy', () => {
     .pipe($.ghPages({
       force: true
     }));
+});
+
+gulp.task('watch', () => {
+  gulp.watch(paths.styles, ['styles']);
 });
