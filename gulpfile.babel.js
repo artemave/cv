@@ -1,16 +1,31 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import sugarss from 'sugarss';
+import sorting from 'postcss-sorting';
 
 const $ = gulpLoadPlugins();
 
-gulp.task('css', () => {
-  return gulp.src('src/css/style.sss')
+var paths = {
+  styles: 'src/css/*.sss'
+};
+
+gulp.task('css', ['sort-rules'], () => {
+  return gulp.src(paths.styles)
     .pipe($.postcss([
       require('autoprefixer')
     ], { parser: sugarss }))
     .pipe($.rename('style.css'))
     .pipe(gulp.dest('.'));
+});
+
+gulp.task('sort-rules', () => {
+  return gulp.src(paths.styles)
+    .pipe($.postcss([
+      sorting({
+        'empty-lines-between-children-rules': 1
+      })
+    ], { syntax: sugarss }))
+    .pipe(gulp.dest('src/css'));
 });
 
 gulp.task('deploy', () => {

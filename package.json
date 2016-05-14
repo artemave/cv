@@ -25,6 +25,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
     "handlebars": "^4.0.5",
+    "postcss-sorting": "^1.4.1",
     "resume-cli": "^0.4.13",
     "sugarss": "^0.1.3"
   }
