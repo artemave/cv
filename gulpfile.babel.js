@@ -37,6 +37,6 @@ gulp.task('deploy', () => {
     }));
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['styles'], () => {
   gulp.watch(paths.styles, ['styles']);
 });
