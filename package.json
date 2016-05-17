@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "resume serve --resume src/resume.json",
+    "test": "cd src; resume test",
     "deploy": "gulp deploy"
   },
   "devDependencies": {
