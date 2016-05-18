@@ -29,6 +29,15 @@ gulp.task('sort-rules', () => {
     .pipe(gulp.dest('src/css'));
 });
 
+gulp.task('pdf', () => {
+  return gulp.src('public/index.html')
+    .pipe($.html2pdf({
+      printMediaType: true
+    }))
+    .pipe($.rename('Alec Rust CV.pdf'))
+    .pipe(gulp.dest('public'));
+});
+
 gulp.task('deploy', () => {
   return gulp.src('./public/**/*')
     .pipe($.ghPages({

@@ -238,11 +238,11 @@ dt {
 dd {
   margin-left: 0
 }
-li {
+#content li {
   list-style: none;
   line-height: 1.8
 }
-li:before {
+#content li:before {
   position: absolute;
   float: left;
   margin-top: 6px;
@@ -306,6 +306,25 @@ em {
   }
 }
 /* Utilities */
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: 0;
+  width: auto;
+  height: auto
+}
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -1117,7 +1136,8 @@ em {
 #header {
   margin-bottom: 30px;
   padding: 50px 0;
-  background: #f4f6f6
+  border-bottom: 1px solid #dfdfdf;
+  background-color: #f4f6f6
 }
 #header h2 {
   color: #95a5a6;
@@ -1127,6 +1147,31 @@ em {
   #header {
     margin-bottom: 10px;
     padding: 40px 0
+  }
+}
+.Menu-list {
+  margin-bottom: 0;
+  padding-left: 0;
+  border-bottom: 1px solid #dfdfdf;
+  list-style-type: none
+}
+.Menu-item {
+  float: left;
+  width: 50%
+}
+.Menu-link {
+  display: block;
+  padding: 10px;
+  background-color: #f4f6f6;
+  text-align: center
+}
+.Menu-link:hover {
+  background-color: #fff
+}
+/* Hide in PDF version */
+@media print {
+  .Menu {
+    display: none
   }
 }
 #content h3 {

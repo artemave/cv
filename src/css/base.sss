@@ -96,11 +96,11 @@ dt
 dd
   margin-left: 0
 
-li
+#content li
   list-style: none
   line-height: 1.8
 
-li:before
+#content li:before
   position: absolute
   float: left
   margin-top: 6px
@@ -161,6 +161,25 @@ em
     margin-bottom: 0
 
 // Utilities
+.visuallyhidden
+  position: absolute
+  overflow: hidden
+  clip: rect(0 0 0 0)
+  margin: -1px
+  padding: 0
+  width: 1px
+  height: 1px
+  border: 0
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus
+  position: static
+  overflow: visible
+  clip: auto
+  margin: 0
+  width: auto
+  height: auto
+
 .clearfix:before,
 .clearfix:after
   display: table
