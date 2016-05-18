@@ -28,6 +28,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
     "handlebars": "^4.0.5",
+    "postcss-custom-properties": "^5.0.1",
     "postcss-import": "^8.1.2",
     "postcss-normalize": "^0.2.0",
     "postcss-sorting": "^1.4.1",

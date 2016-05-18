@@ -13,6 +13,7 @@ gulp.task('styles', ['sort-rules'], () => {
   return gulp.src(paths.styles)
     .pipe($.postcss([
       require('postcss-import'),
+      require('postcss-custom-properties'),
       require('postcss-normalize'),
       require('autoprefixer')
     ], { parser: sugarss }))
