@@ -23,4 +23,4 @@ The `index.html` file viewed here is served from `/public/index.html`. Changes t
 
 ## Deploying Changes
 
-[gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) is used to push changes to the `gh-pages` branch. Run `npm run deploy` and it will push the *entire* contents of `/public` (including the untracked `index.html`) to GitHub.
+[gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) is used to push changes to the `gh-pages` branch. Run `npm run deploy` and it will push the *entire* contents of `/public` (including the untracked built files) to GitHub.

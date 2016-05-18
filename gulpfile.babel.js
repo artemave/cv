@@ -5,6 +5,7 @@ import sugarss from 'sugarss';
 const $ = gulpLoadPlugins();
 
 var paths = {
+  resume: 'src/resume.json',
   styles: 'src/css/*.sss'
 };
 
@@ -29,16 +30,22 @@ gulp.task('sort-rules', () => {
     .pipe(gulp.dest('src/css'));
 });
 
-gulp.task('pdf', () => {
+gulp.task('build-pdf', () => {
   return gulp.src('public/index.html')
     .pipe($.html2pdf({
       printMediaType: true
     }))
-    .pipe($.rename('Alec Rust CV.pdf'))
+    .pipe($.rename('alec-rust-cv.pdf'))
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('deploy', () => {
+gulp.task('copy-json', () => {
+  return gulp.src(paths.resume)
+    .pipe($.rename('alec-rust-cv.json'))
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('deploy', ['build'] () => {
   return gulp.src('./public/**/*')
     .pipe($.ghPages({
       force: true
@@ -46,8 +53,9 @@ gulp.task('deploy', () => {
 });
 
 gulp.task('watch', ['styles'], () => {
+  gulp.watch(paths.resume, ['copy-json']);
   gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('build', ['styles']);
+gulp.task('build', ['styles', 'build-pdf', 'copy-json']);
 gulp.task('default', ['build']);
