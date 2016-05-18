@@ -17,7 +17,10 @@ gulp.task('styles', ['sort-rules'], () => {
       require('autoprefixer')
     ], { parser: sugarss }))
     .pipe($.rename('style.css'))
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public'))
+    .pipe($.cssnano())
+    .pipe($.rename('style.min.css'))
+    .pipe(gulp.dest('public'))
 });
 
 gulp.task('sort-rules', () => {
