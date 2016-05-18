@@ -45,7 +45,7 @@ gulp.task('copy-json', () => {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('deploy', ['build'] () => {
+gulp.task('deploy', ['build'], () => {
   return gulp.src('./public/**/*')
     .pipe($.ghPages({
       force: true
