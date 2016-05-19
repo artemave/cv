@@ -1,6 +1,6 @@
 :root
-  --color-yellow: #f1c40f
   --color-green: #2ec239
+  --color-dark-gray: #373737
   --color-light-gray: #dfdfdf
 
 *
@@ -16,7 +16,7 @@ html
 body
   margin: 0 0 80px
   background-color: #fff
-  color: #333
+  color: var(--color-dark-gray)
   font-size: 14px
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif
   line-height: 1.42857143
@@ -26,7 +26,7 @@ a
   text-decoration: none
 
 a:focus, a:hover
-  color: var(--color-yellow)
+  color: var(--color-dark-gray)
   text-decoration: none
 
 p
@@ -65,7 +65,6 @@ h4
   font-size: 18px
 
 h4 span:first-child
-  color: #000
   font-weight: bold
 
 @media (max-width: 480px)
@@ -73,7 +72,7 @@ h4 span:first-child
     font-size: 26px
 
 section
-  margin-top: 30px
+  margin-top: 40px
 
 ul,
 ol
