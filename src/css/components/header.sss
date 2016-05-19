@@ -1,16 +1,20 @@
-@import "base.sss"
+@import "../base/base.sss"
 
-#header
+.Header
   margin-bottom: 30px
   padding: 50px 0
   border-bottom: 1px solid var(--color-light-gray)
   background-color: #f4f6f6
+  text-align: center
 
-#header h2
+.Header-name
+  font-weight: bold
+
+.Header-label
   color: #95a5a6
   font-size: 24px
 
 @media (max-width: 480px)
-  #header
+  .Header
     margin-bottom: 10px
     padding: 40px 0

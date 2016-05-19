@@ -10,12 +10,15 @@ var paths = {
 };
 
 gulp.task('styles', ['sort-rules'], () => {
-  return gulp.src(paths.styles)
+  return gulp.src('src/css/style.sss')
     .pipe($.postcss([
       require('postcss-import'),
       require('postcss-custom-properties'),
       require('postcss-normalize'),
-      require('autoprefixer')
+      require('autoprefixer'),
+      require('postcss-reporter')({
+        clearMessages: true
+      })
     ], { parser: sugarss }))
     .pipe($.rename('style.css'))
     .pipe(gulp.dest('public'))

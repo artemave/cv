@@ -2,16 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
     <title>{{#resume.basics}}{{name}}{{/resume.basics}} CV</title>
+    <meta name="description" content="Curriculum Vitae for Alec Rust, experienced frontend web developer.">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     <link rel="stylesheet" href="style.min.css">
   </head>
   <body>
 
     <nav class="Menu" aria-labelledby="primary-menu">
-      <p id="primary-menu" class="visuallyhidden">CV Menu</p>
-      <ul class="Menu-list clearfix">
+      <p id="primary-menu" class="u-hiddenVisually">CV Menu</p>
+      <ul class="Menu-list u-cf">
         <li class="Menu-item">
           <a class="Menu-link" href="alec-rust-cv.pdf">As PDF</a>
         </li>
@@ -27,18 +28,18 @@
       </ul>
     </nav>
 
-    <header id="header">
-      <div class="container clearfix">
-        <div class="row clearfix">
+    <header class="Header">
+      <div class="Container u-cf">
+        <div class="row u-cf">
           <div class="col-sm-9 col-sm-push-3">
             {{#resume.basics}}
             {{#name}}
-            <h1>
+            <h1 class="Header-name">
               {{.}}
             </h1>
             {{/name}}
             {{#label}}
-            <h2>
+            <h2 class="Header-label">
               {{.}}
             </h2>
             {{/label}}
@@ -48,15 +49,15 @@
       </div>
     </header>
 
-    <div id="content" class="container clearfix">
+    <main id="content" class="Container u-cf">
 
       {{#resume.basics}}
-      <section id="contact" class="row clearfix">
+      <section id="contact" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Contact</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#email}}
           <div class="col-sm-6">
             <strong>Email</strong>
@@ -80,7 +81,7 @@
           </div>
         </div>
       </section>
-      <section id="about" class="row clearfix">
+      <section id="about" class="row u-cf">
         <aside class="col-sm-3">
           <h3>About</h3>
         </aside>
@@ -91,12 +92,12 @@
         </div>
       </section>
       {{#if profiles.length}}
-      <section id="profiles" class="row clearfix">
+      <section id="profiles" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Profiles</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
             {{#profiles}}
             <div class="col-sm-6">
               {{#network}}
@@ -130,12 +131,12 @@
       {{/resume.basics}}
 
       {{#if resume.work.length}}
-      <section id="work" class="row clearfix">
+      <section id="work" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Work</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.work}}
           <div class="col-sm-12">
             <h4 class="strike-through">
@@ -145,7 +146,7 @@
               </span>
             </h4>
             {{#website}}
-            <div class="website pull-right">
+            <div class="website u-floatRight">
               <a href="{{.}}">{{.}}</a>
             </div>
             {{/website}}
@@ -175,12 +176,12 @@
       {{/if}}
 
       {{#if resume.volunteer.length}}
-      <section id="volunteer" class="row clearfix">
+      <section id="volunteer" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Volunteer</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.volunteer}}
           <div class="col-sm-12">
             <h4 class="strike-through">
@@ -190,7 +191,7 @@
               </span>
             </h4>
             {{#website}}
-            <div class="website pull-right">
+            <div class="website u-floatRight">
               <a href="{{.}}">{{.}}</a>
             </div>
             {{/website}}
@@ -220,12 +221,12 @@
       {{/if}}
 
       {{#if resume.education.length}}
-      <section id="education" class="row clearfix">
+      <section id="education" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Education</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.education}}
           <div class="col-sm-12">
             <h4 class="strike-through">
@@ -260,19 +261,19 @@
       {{/if}}
 
       {{#if resume.awards.length}}
-      <section id="awards" class="row clearfix">
+      <section id="awards" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Awards</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.awards}}
           <div class="col-sm-12">
             <h4 class="strike-through">
               <span>{{title}}</span>
             </h4>
             {{#date}}
-            <div class="date pull-right">
+            <div class="date u-floatRight">
               <em>Awarded</em>
               {{.}}
             </div>
@@ -296,12 +297,12 @@
       {{/if}}
 
       {{#if resume.publications.length}}
-      <section id="publications" class="row clearfix">
+      <section id="publications" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Publications</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.publications}}
           <div class="col-sm-12">
             <h4 class="strike-through">
@@ -311,7 +312,7 @@
               </span>
             </h4>
             {{#website}}
-            <div class="website pull-right">
+            <div class="website u-floatRight">
               <a href="{{.}}"></a>
             </div>
             {{/website}}
@@ -334,12 +335,12 @@
       {{/if}}
 
       {{#if resume.skills.length}}
-      <section id="skills" class="row clearfix">
+      <section id="skills" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Skills</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.skills}}
           <div class="col-sm-6">
             {{#name}}
@@ -362,12 +363,12 @@
       {{/if}}
 
       {{#if resume.languages.length}}
-      <section id="languages" class="row clearfix">
+      <section id="languages" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Languages</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.languages}}
           <div class="col-sm-6">
             {{#language}}
@@ -388,12 +389,12 @@
       {{/if}}
 
       {{#if resume.interests.length}}
-      <section id="interests" class="row clearfix">
+      <section id="interests" class="row u-cf">
         <aside class="col-sm-3">
           <h3>Interests</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.interests}}
           <div class="col-sm-6">
             {{#name}}
@@ -416,12 +417,12 @@
       {{/if}}
 
       {{#if resume.references.length}}
-      <section id="references" class="row clearfix">
+      <section id="references" class="row u-cf">
         <aside class="col-sm-3">
           <h3>References</h3>
         </aside>
         <div class="col-sm-9">
-          <div class="row clearfix">
+          <div class="row u-cf">
           {{#each resume.references}}
           <div class="col-sm-12">
             {{#if reference}}
@@ -441,7 +442,7 @@
       </section>
       {{/if}}
 
-    </div>
+    </main>
 
   </body>
 </html>
