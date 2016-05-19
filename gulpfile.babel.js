@@ -36,8 +36,8 @@ gulp.task('sort-rules', () => {
 
 gulp.task('build-pdf', () => {
   return gulp.src('public/index.html')
-    .pipe($.html2pdf({
-      printMediaType: true
+    .pipe($.htmlPdf({
+      base: 'file:///Users/alec/projects/personal/cv/public/'
     }))
     .pipe($.rename('alec-rust-cv.pdf'))
     .pipe(gulp.dest('public'));

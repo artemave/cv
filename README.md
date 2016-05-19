@@ -19,8 +19,6 @@ Run the following to download and run locally:
 
 The `index.html` file viewed here is served from `/public/index.html`. Changes to `resume.json` are built to this file after calling `render()` in `index.js` which loads the `resume.hbs` Handlebars template and the CSS from `style.css`.
 
-[wkhtmltopdf](http://wkhtmltopdf.org/) must be installed locally to build the pdf with `gulp pdf`.
-
 ## Deploying Changes
 
 [gulp-gh-pages](https://github.com/shinnn/gulp-gh-pages) is used to push changes to the `gh-pages` branch. Run `npm run deploy` and it will push the *entire* contents of `/public` (including the untracked built files) to GitHub.
