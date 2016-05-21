@@ -5,7 +5,6 @@
     <title>{{#resume.basics}}{{name}}{{/resume.basics}} CV</title>
     <meta name="description" content="Curriculum Vitae for Alec Rust, experienced frontend web developer.">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     <link rel="stylesheet" href="style.min.css">
   </head>
   <body>
@@ -164,7 +163,7 @@
             <h4>Highlights</h4>
             <ul class="highlights">
               {{#highlights}}
-              <li class="bullet">{{.}}</li>
+              <li>{{.}}</li>
               {{/highlights}}
             </ul>
             {{/if}}
@@ -209,7 +208,7 @@
             <h4>Highlights</h4>
             <ul class="highlights">
               {{#highlights}}
-              <li class="bullet">{{.}}</li>
+              <li>{{.}}</li>
               {{/highlights}}
             </ul>
             {{/if}}
