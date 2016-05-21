@@ -180,5 +180,23 @@
         "TeamCity, Hudson, CircleCI, Jenkins"
       ]
     }
+  ],
+  "interests": [
+    {
+      "name": "Outdoors",
+      "keywords": [
+        "Cycling",
+        "Sailing",
+        "Snowboarding"
+      ]
+    },
+    {
+      "name": "Indoors",
+      "keywords": [
+        "Personal projects",
+        "Music",
+        "Politics"
+      ]
+    }
   ]
 }
