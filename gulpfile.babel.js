@@ -6,7 +6,7 @@ const $ = gulpLoadPlugins();
 
 var paths = {
   resume: 'src/resume.json',
-  styles: 'src/css/*.sss'
+  styles: 'src/css/**/*.sss'
 };
 
 gulp.task('styles', ['sort-rules'], () => {
