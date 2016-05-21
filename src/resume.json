@@ -35,7 +35,7 @@
       "website": "http://www.bbc.co.uk/bbcthree",
       "startDate": "2015-06-01",
       "endDate": "2016-06-30",
-      "summary": "The BBC wanted a modern stream/magazine style web application to replace the BBC Three TV channel. I worked with a small team to deliver this Node.js/React project and satisfy the business, editorial, design and analytics requirements.",
+      "summary": "The BBC wanted a modern stream/magazine style web application to replace the BBC Three TV channel. I worked with a small team to deliver this Node/React project and satisfy the business, editorial, design and analytics requirements.",
       "highlights": [
         "User testing of target audience and development of fun website features",
         "Developing an internal library for displaying “cards” of BBC content",
@@ -169,14 +169,17 @@
     {
       "name": "Tools/Technologies",
       "keywords": [
-        "Node.js, React, Webpack, Babel",
+        "Node, React, Webpack, Babel",
         "PostCSS, Sass, LESS, Stylus",
         "Adobe Photoshop/Illustrator",
         "Affinity Photo/Designer",
-        "Git, SVN, Mercurial, Kiln, GitHub",
-        "Ruby on Rails, Heroku, OpenShift",
+        "Git, SVN, Mercurial,",
+        "GitHub, Kiln, Trello, JIRA",
+        "Rails, Heroku, OpenShift",
         "Grunt, Gulp and NPM scripts",
-        "jQuery, WordPress, Umbraco, MySQL",
+        "SendGrid, MailChimp, Mailgun",
+        "jQuery, WordPress, MySQL",
+        "Umbraco .NET CMS",
         "TeamCity, Hudson, CircleCI, Jenkins"
       ]
     }
