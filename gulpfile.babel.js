@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import sugarss from 'sugarss';
+import Pageres from 'pageres';
 
 const $ = gulpLoadPlugins();
 
@@ -14,6 +15,7 @@ gulp.task('styles', ['sort-rules'], () => {
     .pipe($.postcss([
       require('postcss-import'),
       require('postcss-custom-properties'),
+      require('postcss-short-size'),
       require('postcss-normalize'),
       require('autoprefixer'),
       require('postcss-reporter')({
@@ -46,6 +48,15 @@ gulp.task('build-pdf', () => {
     .pipe(gulp.dest('public'));
 });
 
+gulp.task('build-screenshot', () => {
+    return new Pageres({
+          filename: 'screenshot'
+        })
+        .src('public/index.html', ['767x700'], {crop: true})
+        .dest('public')
+        .run();
+});
+
 gulp.task('copy-json', () => {
   return gulp.src(paths.resume)
     .pipe($.rename('alec-rust-cv.json'))
@@ -64,5 +75,5 @@ gulp.task('watch', ['styles'], () => {
   gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('build', ['styles', 'build-pdf', 'copy-json']);
+gulp.task('build', ['styles', 'copy-json', 'build-pdf', 'build-screenshot']);
 gulp.task('default', ['build']);
