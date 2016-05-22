@@ -19,10 +19,10 @@
 #publications .website a:before
   content: attr(href)
 
-@media (max-width: 768px)
-  #publications .website a:before
-    content: "View publication"
-
-@media (max-width: 480px)
+@media (--sm-viewport-max)
   #actions
     display: none
+
+@media (--md-viewport-max)
+  #publications .website a:before
+    content: "View publication"

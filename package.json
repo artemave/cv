@@ -29,6 +29,7 @@
     "gulp-rename": "^1.2.2",
     "handlebars": "^4.0.5",
     "pageres": "^4.1.2",
+    "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.1",
     "postcss-import": "^8.1.2",
     "postcss-normalize": "^0.2.0",

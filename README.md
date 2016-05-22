@@ -1,8 +1,8 @@
-# cv
+# My CV
 
 > Because JSON.
 
-CV for [Alec Rust](http://www.alecrust.com/) in [JSON Resume format](https://jsonresume.org/). Builds to `/public`, hosted with GitHub Pages at: http://cv.alecrust.com/
+CV for [Alec Rust](http://www.alecrust.com/) in [JSON Resume format](https://jsonresume.org/). Hosted with GitHub Pages at: http://cv.alecrust.com/
 
 ## Quick Start
 
