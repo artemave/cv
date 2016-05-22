@@ -43,7 +43,13 @@ gulp.task('sort-rules', () => {
 gulp.task('build-pdf', () => {
   return gulp.src('public/index.html')
     .pipe($.htmlPdf({
-      base: 'file:///Users/alec/projects/personal/cv/public/'
+      base: 'file:///Users/alec/projects/personal/cv/public/',
+      border: {
+        top: '2cm',
+        right: '1cm',
+        bottom: '2cm',
+        left: '1cm'
+      },
     }))
     .pipe($.rename('alec-rust-cv.pdf'))
     .pipe(gulp.dest('public'));
