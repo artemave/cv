@@ -25,4 +25,4 @@ The `index.html` file viewed here is served from `/public/index.html`. Changes t
 
 ## Screenshot
 
-<div style="text-align:center"><img src="http://cv.alecrust.com/screenshot.png"></div>
+![Screenshot of CV](http://cv.alecrust.com/screenshot.png)

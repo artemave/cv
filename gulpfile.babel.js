@@ -52,7 +52,7 @@ gulp.task('build-screenshot', () => {
     return new Pageres({
           filename: 'screenshot'
         })
-        .src('public/index.html', ['767x700'], {crop: true})
+        .src('public/index.html', ['1280x850'], {crop: true})
         .dest('public')
         .run();
 });
