@@ -2,7 +2,7 @@
 
 > Because JSON.
 
-CV for [Alec Rust](http://www.alecrust.com/) in [JSON Resume format](https://jsonresume.org/). Hosted with GitHub Pages at: http://cv.alecrust.com/
+CV for [Alec Rust](https://www.alecrust.com/) in [JSON Resume format](https://jsonresume.org/). Hosted with GitHub Pages at: https://cv.alecrust.com/
 
 ## Quick Start
 

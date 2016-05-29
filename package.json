@@ -2,7 +2,7 @@
   "name": "cv",
   "version": "0.1.0",
   "description": "CV for Alec Rust in JSON Resume format.",
-  "author": "Alec Rust <me@alecrust.com> (http://www.alecrust.com/)",
+  "author": "Alec Rust <me@alecrust.com> (https://www.alecrust.com/)",
   "license": "MIT",
   "repository": {
     "type": "git",
