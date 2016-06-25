@@ -19,10 +19,9 @@
 #publications .website a:before
   content: attr(href)
 
+  @media (--md-viewport-max)
+    content: "View publication"
+
 @media (--sm-viewport-max)
   #actions
     display: none
-
-@media (--md-viewport-max)
-  #publications .website a:before
-    content: "View publication"
