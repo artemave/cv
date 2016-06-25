@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "babel-core": "^6.9.0",
+    "babel-core": "^6.10.4",
     "babel-preset-es2015": "^6.9.0",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
@@ -36,8 +36,8 @@
     "postcss-normalize": "^0.3.0",
     "postcss-reporter": "^1.3.3",
     "postcss-short-size": "^1.1.0",
-    "postcss-sorting": "^1.5.0",
+    "postcss-sorting": "^1.6.1",
     "resume-cli": "^0.4.13",
-    "sugarss": "^0.1.3"
+    "sugarss": "^0.1.4"
   }
 }
