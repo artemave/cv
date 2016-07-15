@@ -13,12 +13,11 @@ var paths = {
 gulp.task('styles', ['sort-rules'], () => {
   return gulp.src('src/css/style.sss')
     .pipe($.postcss([
-      require('postcss-import'),
+      require('postcss-easy-import'),
       require('postcss-nested'),
       require('postcss-custom-properties'),
       require('postcss-custom-media'),
       require('postcss-short-size'),
-      require('postcss-normalize'),
       require('autoprefixer'),
       require('postcss-reporter')({
         clearMessages: true
