@@ -7,11 +7,11 @@ const $ = gulpLoadPlugins();
 
 var paths = {
   resume: 'src/resume.json',
-  styles: 'src/css/**/*.sss'
+  styles: 'src/styles/**/*.sss'
 };
 
 gulp.task('styles', ['sort-rules'], () => {
-  return gulp.src('src/css/style.sss')
+  return gulp.src('src/styles/style.sss')
     .pipe($.postcss([
       require('postcss-import'),
       require('postcss-nested'),
@@ -38,7 +38,7 @@ gulp.task('sort-rules', () => {
         'empty-lines-between-children-rules': 1
       })
     ], { syntax: sugarss }))
-    .pipe(gulp.dest('src/css'));
+    .pipe(gulp.dest('src/styles'));
 });
 
 gulp.task('build-pdf', () => {
