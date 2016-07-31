@@ -145,9 +145,10 @@
           <div class="col-sm-12">
             <h4 class="strike-through">
               <span>{{company}}</span>
-              <span class="date">
-                {{friendlyDate startDate}} — {{friendlyDate endDate}}
-              </span>
+              <div class="date">
+                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
+                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+              </div>
             </h4>
             {{#website}}
             <div class="website u-floatRight">
@@ -190,9 +191,10 @@
           <div class="col-sm-12">
             <h4 class="strike-through">
               <span>{{organization}}</span>
-              <span class="date">
-                {{friendlyDate startDate}} — {{friendlyDate endDate}}
-              </span>
+              <div class="date">
+                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
+                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+              </div>
             </h4>
             {{#website}}
             <div class="website u-floatRight">
@@ -235,9 +237,10 @@
           <div class="col-sm-12">
             <h4 class="strike-through">
               <span>{{institution}}</span>
-              <span class="date">
-                {{friendlyDate startDate}} — {{friendlyDate endDate}}
-              </span>
+              <div class="date">
+                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
+                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+              </div>
             </h4>
             {{#area}}
             <div class="area">
@@ -311,9 +314,9 @@
           <div class="col-sm-12">
             <h4 class="strike-through">
               <span>{{name}}</span>
-              <span class="date">
-                {{friendlyDate releaseDate}}
-              </span>
+              <div class="date">
+                <time datetime="{{releaseDate}}">{{friendlyDate releaseDate}}</time>
+              </div>
             </h4>
             {{#website}}
             <div class="website u-floatRight">
