@@ -17,8 +17,8 @@
     "deploy": "gulp deploy"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "babel-core": "^6.10.4",
+    "autoprefixer": "^6.3.7",
+    "babel-core": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "date-fns": "^1.3.0",
     "gulp": "^3.9.1",
@@ -35,10 +35,10 @@
     "postcss-import": "^8.1.2",
     "postcss-nested": "^1.0.0",
     "postcss-normalize": "^0.3.0",
-    "postcss-reporter": "^1.3.3",
+    "postcss-reporter": "^1.4.1",
     "postcss-short-size": "^1.1.0",
     "postcss-sorting": "^1.6.1",
     "resume-cli": "^0.4.13",
-    "sugarss": "^0.1.4"
+    "sugarss": "^0.1.5"
   }
 }
