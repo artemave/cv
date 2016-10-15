@@ -65,6 +65,25 @@ gulp.task('build-screenshot', () => {
         .run();
 });
 
+gulp.task('minify-html', () => {
+  gulp.src('public/index.html')
+    .pipe($.htmlMinifier({
+      caseSensitive: true,
+      collapseBooleanAttributes: true,
+      collapseInlineTagWhitespace: true,
+      collapseWhitespace: true,
+      minifyCSS: true,
+      minifyJS: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      removeOptionalTags: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true
+    }))
+    .pipe(gulp.dest('public'))
+});
+
 gulp.task('copy-json', () => {
   return gulp.src(paths.resume)
     .pipe($.rename('alec-rust-cv.json'))
@@ -83,5 +102,5 @@ gulp.task('watch', ['styles'], () => {
   gulp.watch(paths.styles, ['styles']);
 });
 
-gulp.task('build', ['styles', 'copy-json', 'build-pdf', 'build-screenshot']);
+gulp.task('build', ['styles', 'copy-json', 'build-pdf', 'build-screenshot', 'minify-html']);
 gulp.task('default', ['build']);
