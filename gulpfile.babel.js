@@ -57,12 +57,12 @@ gulp.task('build-pdf', () => {
 });
 
 gulp.task('build-screenshot', () => {
-    return new Pageres({
-          filename: 'screenshot'
-        })
-        .src('public/index.html', ['1280x850'], {crop: true})
-        .dest('public')
-        .run();
+  return new Pageres({
+      filename: 'screenshot'
+    })
+    .src('public/index.html', ['1280x850'], {crop: true})
+    .dest('public')
+    .run();
 });
 
 gulp.task('minify-html', () => {

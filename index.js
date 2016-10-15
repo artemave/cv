@@ -3,8 +3,8 @@ var Handlebars = require('handlebars');
 var formatDate = require('date-fns/format')
 
 Handlebars.registerHelper('friendlyDate', function(datestamp) {
-    var date = new Date(datestamp);
-    return formatDate(date, 'Do MMM YYYY');
+  var date = new Date(datestamp);
+  return formatDate(date, 'Do MMM YYYY');
 });
 
 function render(resume) {
