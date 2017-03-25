@@ -18,7 +18,6 @@ gulp.task('styles', ['sort-rules'], () => {
       require('postcss-custom-properties'),
       require('postcss-custom-media'),
       require('postcss-short-size'),
-      require('postcss-normalize'),
       require('autoprefixer'),
       require('postcss-reporter')({
         clearMessages: true
