@@ -1,10 +1,12 @@
 var fs = require('fs');
 var Handlebars = require('handlebars');
+var parse = require('date-fns/parse')
+var isValid = require('date-fns/is_valid')
 var formatDate = require('date-fns/format')
 
 Handlebars.registerHelper('friendlyDate', function(datestamp) {
-  var date = new Date(datestamp);
-  return formatDate(date, 'Do MMM YYYY');
+  var date = parse(datestamp);
+  return isValid(date) ? formatDate(date, 'Do MMM YYYY') : datestamp
 });
 
 function render(resume) {
