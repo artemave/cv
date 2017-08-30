@@ -1,16 +1,16 @@
-import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import sugarss from 'sugarss';
-import Pageres from 'pageres';
+var gulp = require('gulp');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var sugarss = require('sugarss');
+var Pageres = require('pageres');
 
-const $ = gulpLoadPlugins();
+var $ = gulpLoadPlugins();
 
 var paths = {
   resume: 'src/resume.json',
   styles: 'src/styles/**/*.sss'
 };
 
-gulp.task('styles', ['sort-rules'], () => {
+gulp.task('styles', ['sort-rules'], function () {
   return gulp.src('src/styles/style.sss')
     .pipe($.postcss([
       require('postcss-import'),
@@ -30,7 +30,7 @@ gulp.task('styles', ['sort-rules'], () => {
     .pipe(gulp.dest('public'))
 });
 
-gulp.task('sort-rules', () => {
+gulp.task('sort-rules', function () {
   return gulp.src(paths.styles)
     .pipe($.postcss([
       require('postcss-sorting')({
@@ -40,7 +40,7 @@ gulp.task('sort-rules', () => {
     .pipe(gulp.dest('src/styles'));
 });
 
-gulp.task('build-pdf', () => {
+gulp.task('build-pdf', function () {
   return gulp.src('public/index.html')
     .pipe($.htmlPdf({
       base: 'file:///Users/alec/projects/personal/cv/public/',
@@ -55,7 +55,7 @@ gulp.task('build-pdf', () => {
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('build-screenshot', () => {
+gulp.task('build-screenshot', function () {
   return new Pageres({
       filename: 'screenshot'
     })
@@ -64,7 +64,7 @@ gulp.task('build-screenshot', () => {
     .run();
 });
 
-gulp.task('minify-html', () => {
+gulp.task('minify-html', function () {
   gulp.src('public/index.html')
     .pipe($.htmlMinifier({
       caseSensitive: true,
@@ -81,20 +81,20 @@ gulp.task('minify-html', () => {
     .pipe(gulp.dest('public'))
 });
 
-gulp.task('copy-json', () => {
+gulp.task('copy-json', function () {
   return gulp.src(paths.resume)
     .pipe($.rename('alec-rust-cv.json'))
     .pipe(gulp.dest('public'));
 });
 
-gulp.task('deploy', ['build'], () => {
+gulp.task('deploy', ['build'], function () {
   return gulp.src('./public/**/*')
     .pipe($.ghPages({
       force: true
     }));
 });
 
-gulp.task('watch', ['styles'], () => {
+gulp.task('watch', ['styles'], function () {
   gulp.watch(paths.resume, ['copy-json']);
   gulp.watch(paths.styles, ['styles']);
 });
