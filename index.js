@@ -8,7 +8,7 @@ Handlebars.registerHelper('friendlyDate', function(datestamp) {
 });
 
 function render(resume) {
-  var tpl = fs.readFileSync(__dirname + '/resume.hbs', 'utf-8');
+  var tpl = fs.readFileSync(__dirname + '/src/resume.hbs', 'utf-8');
   return Handlebars.compile(tpl)({
     resume: resume
   });
