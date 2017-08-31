@@ -11,4 +11,4 @@ Static site for my CV using [JSON Resume](https://jsonresume.org/). See it at ht
 
 ## Screenshot
 
-![Screenshot of CV](http://cv.alecrust.com/screenshot.png)
+![Screenshot of CV](https://cv.alecrust.com/screenshot.png)
