@@ -30,25 +30,23 @@
     <header class="Header">
       <div class="Container u-cf">
         <div class="row u-cf">
-          <div class="col-sm-9 col-sm-push-3">
-            {{#resume.basics}}
-            {{#picture}}
-            <div class="Avatar">
-              <img src="{{.}}" width="140" height="140" alt="Alec Rust" class="Avatar-image">
-            </div>
-            {{/picture}}
-            {{#name}}
-            <h1 class="Header-name">
-              {{.}}
-            </h1>
-            {{/name}}
-            {{#label}}
-            <h2 class="Header-label">
-              {{.}}
-            </h2>
-            {{/label}}
-            {{/resume.basics}}
+          {{#resume.basics}}
+          {{#picture}}
+          <div class="Avatar">
+            <img src="{{.}}" width="140" height="140" alt="Alec Rust" class="Avatar-image">
           </div>
+          {{/picture}}
+          {{#name}}
+          <h1 class="Header-name">
+            {{.}}
+          </h1>
+          {{/name}}
+          {{#label}}
+          <h2 class="Header-label">
+            {{.}}
+          </h2>
+          {{/label}}
+          {{/resume.basics}}
         </div>
       </div>
     </header>
