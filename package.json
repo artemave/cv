@@ -7,6 +7,7 @@
   "repository": "AlecRust/cv",
   "scripts": {
     "start": "resume serve --resume src/resume.json --theme .",
+    "lint": "eslint .",
     "build": "gulp build",
     "test": "cd src && resume validate"
   },
@@ -14,6 +15,7 @@
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "date-fns": "^2.30.0",
+    "eslint": "^8.42.0",
     "gulp": "^4.0.2",
     "gulp-html-minifier": "^0.1.8",
     "gulp-postcss": "^9.0.1",

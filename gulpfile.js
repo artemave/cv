@@ -37,7 +37,7 @@ function styles() {
       }),
     ], { parser: sugarss }))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public'));
 }
 
 function buildHtml() {
