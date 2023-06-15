@@ -1,0 +1,10 @@
+@custom-media --sm-viewport-min (min-width: 480px);
+@custom-media --sm-viewport-max (max-width: 480px);
+@custom-media --md-viewport-min (min-width: 768px);
+@custom-media --md-viewport-max (max-width: 768px);
+
+:root {
+  --color-green: #5ca019;
+  --color-dark-gray: #373737;
+  --color-light-gray: #dfdfdf;
+}

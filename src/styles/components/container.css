@@ -1,0 +1,14 @@
+/* Container */
+
+.Container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 30px;
+}
+
+@media (--md-viewport-min) {
+
+.Container {
+    width: 750px;
+  }
+}

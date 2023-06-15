@@ -1,0 +1,17 @@
+.Avatar {
+  margin-bottom: 10px;
+}
+
+.Avatar-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+@media (--md-viewport-min) {
+
+.Avatar-image {
+    width: 140px;
+    height: 140px;
+  }
+}

@@ -2,12 +2,11 @@ const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 const htmlMinifier = require('gulp-html-minifier');
-const sugarss = require('sugarss');
 const { exec } = require('child_process');
 
 const paths = {
   resume: 'src/resume.json',
-  styles: 'src/styles/**/*.sss'
+  styles: 'src/styles/**/*.css'
 };
 
 function sortRules() {
@@ -16,26 +15,24 @@ function sortRules() {
       require('postcss-sorting')({
         'empty-lines-between-children-rules': 1
       })
-    ], { syntax: sugarss }))
+    ]))
     .pipe(gulp.dest('src/styles'));
 }
 
 function styles() {
-  return gulp.src('src/styles/style.sss')
+  return gulp.src('src/styles/style.css')
     .pipe(postcss([
       require('postcss-import'),
-      require('postcss-nested'),
-      require('postcss-custom-properties'),
-      require('postcss-custom-media'),
-      require('postcss-short-size'),
-      require('autoprefixer'),
+      require('postcss-preset-env')({
+        stage: 0
+      }),
       require('postcss-reporter')({
         clearMessages: true
       }),
       require('cssnano')({
         preset: 'default',
       }),
-    ], { parser: sugarss }))
+    ]))
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest('public'));
 }
