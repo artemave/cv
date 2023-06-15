@@ -1,18 +1,18 @@
-var gulp = require('gulp');
-var gulpLoadPlugins = require('gulp-load-plugins');
-var sugarss = require('sugarss');
-var { exec } = require('child_process');
+const gulp = require('gulp');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const htmlMinifier = require('gulp-html-minifier');
+const sugarss = require('sugarss');
+const { exec } = require('child_process');
 
-var $ = gulpLoadPlugins();
-
-var paths = {
+const paths = {
   resume: 'src/resume.json',
   styles: 'src/styles/**/*.sss'
 };
 
 function sortRules() {
   return gulp.src(paths.styles)
-    .pipe($.postcss([
+    .pipe(postcss([
       require('postcss-sorting')({
         'empty-lines-between-children-rules': 1
       })
@@ -22,7 +22,7 @@ function sortRules() {
 
 function styles() {
   return gulp.src('src/styles/style.sss')
-    .pipe($.postcss([
+    .pipe(postcss([
       require('postcss-import'),
       require('postcss-nested'),
       require('postcss-custom-properties'),
@@ -31,38 +31,26 @@ function styles() {
       require('autoprefixer'),
       require('postcss-reporter')({
         clearMessages: true
-      })
+      }),
+      require('cssnano')({
+        preset: 'default',
+      }),
     ], { parser: sugarss }))
-    .pipe($.rename('style.css'))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('public'))
-    .pipe($.cssnano())
-    .pipe($.rename('style.min.css'))
-    .pipe(gulp.dest('public'));
 }
 
-function buildHtml(cb) {
-  exec('npx resume export public/index.html --resume src/resume.json --theme .', function (err, stdout, stderr) {
-    if (err) {
-      console.error('Error while exporting resume HTML:', err);
-      console.error(stderr);
-    }
-    cb(err);
-  });
+function buildHtml() {
+  return execPromise('npx resume export public/index.html --resume src/resume.json --theme .');
 }
 
-function buildPdf(cb) {
-  exec('npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme .', function (err, stdout, stderr) {
-    if (err) {
-      console.error('Error while exporting resume PDF:', err);
-      console.error(stderr);
-    }
-    cb(err);
-  });
+function buildPdf() {
+  return execPromise('npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme .');
 }
 
 function minifyHtml() {
   return gulp.src('public/index.html')
-    .pipe($.htmlMinifier({
+    .pipe(htmlMinifier({
       caseSensitive: true,
       collapseBooleanAttributes: true,
       collapseWhitespace: true,
@@ -79,13 +67,27 @@ function minifyHtml() {
 
 function copyJson() {
   return gulp.src(paths.resume)
-    .pipe($.rename('alec-rust-cv.json'))
+    .pipe(rename('alec-rust-cv.json'))
     .pipe(gulp.dest('public'));
 }
 
 function watch() {
   gulp.watch(paths.resume, copyJson);
   gulp.watch(paths.styles, styles);
+}
+
+function execPromise(command) {
+  return new Promise((resolve, reject) => {
+    exec(command, (err, stdout, stderr) => {
+      if (err) {
+        console.error(`Error while executing command "${command}":`, err);
+        console.error(stderr);
+        reject(err);
+      } else {
+        resolve(stdout);
+      }
+    });
+  });
 }
 
 gulp.task('sort-rules', sortRules);
