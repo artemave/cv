@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var sugarss = require('sugarss');
 var Pageres = require('pageres');
+var { exec } = require('child_process');
 
 var $ = gulpLoadPlugins();
 
@@ -38,6 +39,16 @@ function styles() {
     .pipe($.cssnano())
     .pipe($.rename('style.min.css'))
     .pipe(gulp.dest('public'));
+}
+
+function buildHtml(cb) {
+  exec('npx resume export public/index.html --resume src/resume.json --theme .', function (err, stdout, stderr) {
+    if (err) {
+      console.error('Error while exporting resume:', err);
+      console.error(stderr);
+    }
+    cb(err);
+  });
 }
 
 function buildPdf() {
@@ -99,11 +110,12 @@ function watch() {
 
 gulp.task('sort-rules', sortRules);
 gulp.task('styles', gulp.series(sortRules, styles));
+gulp.task('build-html', buildHtml);
 gulp.task('build-pdf', buildPdf);
 gulp.task('build-screenshot', buildScreenshot);
 gulp.task('minify-html', minifyHtml);
 gulp.task('copy-json', copyJson);
-gulp.task('build', gulp.series('styles', 'copy-json', 'build-pdf', 'build-screenshot', 'minify-html'));
+gulp.task('build', gulp.series('styles', 'copy-json', 'build-html', 'build-pdf', 'build-screenshot', 'minify-html'));
 gulp.task('deploy', gulp.series('build', deploy));
 gulp.task('watch', gulp.series('styles', watch));
 gulp.task('default', gulp.series('build'));
