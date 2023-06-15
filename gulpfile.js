@@ -10,7 +10,17 @@ var paths = {
   styles: 'src/styles/**/*.sss'
 };
 
-gulp.task('styles', ['sort-rules'], function () {
+function sortRules() {
+  return gulp.src(paths.styles)
+    .pipe($.postcss([
+      require('postcss-sorting')({
+        'empty-lines-between-children-rules': 1
+      })
+    ], { syntax: sugarss }))
+    .pipe(gulp.dest('src/styles'));
+}
+
+function styles() {
   return gulp.src('src/styles/style.sss')
     .pipe($.postcss([
       require('postcss-import'),
@@ -27,20 +37,10 @@ gulp.task('styles', ['sort-rules'], function () {
     .pipe(gulp.dest('public'))
     .pipe($.cssnano())
     .pipe($.rename('style.min.css'))
-    .pipe(gulp.dest('public'))
-});
+    .pipe(gulp.dest('public'));
+}
 
-gulp.task('sort-rules', function () {
-  return gulp.src(paths.styles)
-    .pipe($.postcss([
-      require('postcss-sorting')({
-        'empty-lines-between-children-rules': 1
-      })
-    ], { syntax: sugarss }))
-    .pipe(gulp.dest('src/styles'));
-});
-
-gulp.task('build-pdf', function () {
+function buildPdf() {
   return gulp.src('public/index.html')
     .pipe($.htmlPdf({
       base: 'file:///Users/alec/projects/personal/cv/public/',
@@ -53,19 +53,17 @@ gulp.task('build-pdf', function () {
     }))
     .pipe($.rename('alec-rust-cv.pdf'))
     .pipe(gulp.dest('public'));
-});
+}
 
-gulp.task('build-screenshot', function () {
-  return new Pageres({
-      filename: 'screenshot'
-    })
+function buildScreenshot() {
+  return new Pageres({filename: 'screenshot'})
     .src('public/index.html', ['1280x850'], {crop: true})
     .dest('public')
     .run();
-});
+}
 
-gulp.task('minify-html', function () {
-  gulp.src('public/index.html')
+function minifyHtml() {
+  return gulp.src('public/index.html')
     .pipe($.htmlMinifier({
       caseSensitive: true,
       collapseBooleanAttributes: true,
@@ -78,26 +76,34 @@ gulp.task('minify-html', function () {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true
     }))
-    .pipe(gulp.dest('public'))
-});
+    .pipe(gulp.dest('public'));
+}
 
-gulp.task('copy-json', function () {
+function copyJson() {
   return gulp.src(paths.resume)
     .pipe($.rename('alec-rust-cv.json'))
     .pipe(gulp.dest('public'));
-});
+}
 
-gulp.task('deploy', ['build'], function () {
+function deploy() {
   return gulp.src('./public/**/*')
     .pipe($.ghPages({
       force: true
     }));
-});
+}
 
-gulp.task('watch', ['styles'], function () {
-  gulp.watch(paths.resume, ['copy-json']);
-  gulp.watch(paths.styles, ['styles']);
-});
+function watch() {
+  gulp.watch(paths.resume, copyJson);
+  gulp.watch(paths.styles, styles);
+}
 
-gulp.task('build', ['styles', 'copy-json', 'build-pdf', 'build-screenshot', 'minify-html']);
-gulp.task('default', ['build']);
+gulp.task('sort-rules', sortRules);
+gulp.task('styles', gulp.series(sortRules, styles));
+gulp.task('build-pdf', buildPdf);
+gulp.task('build-screenshot', buildScreenshot);
+gulp.task('minify-html', minifyHtml);
+gulp.task('copy-json', copyJson);
+gulp.task('build', gulp.series('styles', 'copy-json', 'build-pdf', 'build-screenshot', 'minify-html'));
+gulp.task('deploy', gulp.series('build', deploy));
+gulp.task('watch', gulp.series('styles', watch));
+gulp.task('default', gulp.series('build'));
