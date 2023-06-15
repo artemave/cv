@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var sugarss = require('sugarss');
-var Pageres = require('pageres');
 var { exec } = require('child_process');
 
 var $ = gulpLoadPlugins();
@@ -66,13 +65,6 @@ function buildPdf() {
     .pipe(gulp.dest('public'));
 }
 
-function buildScreenshot() {
-  return new Pageres({filename: 'screenshot'})
-    .src('public/index.html', ['1280x850'], {crop: true})
-    .dest('public')
-    .run();
-}
-
 function minifyHtml() {
   return gulp.src('public/index.html')
     .pipe($.htmlMinifier({
@@ -96,13 +88,6 @@ function copyJson() {
     .pipe(gulp.dest('public'));
 }
 
-function deploy() {
-  return gulp.src('./public/**/*')
-    .pipe($.ghPages({
-      force: true
-    }));
-}
-
 function watch() {
   gulp.watch(paths.resume, copyJson);
   gulp.watch(paths.styles, styles);
@@ -112,10 +97,8 @@ gulp.task('sort-rules', sortRules);
 gulp.task('styles', gulp.series(sortRules, styles));
 gulp.task('build-html', buildHtml);
 gulp.task('build-pdf', buildPdf);
-gulp.task('build-screenshot', buildScreenshot);
 gulp.task('minify-html', minifyHtml);
 gulp.task('copy-json', copyJson);
-gulp.task('build', gulp.series('styles', 'copy-json', 'build-html', 'build-pdf', 'build-screenshot', 'minify-html'));
-gulp.task('deploy', gulp.series('build', deploy));
+gulp.task('build', gulp.series('styles', 'copy-json', 'build-html', 'build-pdf', 'minify-html'));
 gulp.task('watch', gulp.series('styles', watch));
 gulp.task('default', gulp.series('build'));

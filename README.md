@@ -8,7 +8,3 @@ Static site for my CV using [JSON Resume](https://jsonresume.org/). See it at ht
 2. `cd cv`
 3. `npm install`
 4. `npm start`
-
-## Screenshot
-
-![Screenshot of CV](https://cv.alecrust.com/screenshot.png)
