@@ -43,26 +43,21 @@ function styles() {
 function buildHtml(cb) {
   exec('npx resume export public/index.html --resume src/resume.json --theme .', function (err, stdout, stderr) {
     if (err) {
-      console.error('Error while exporting resume:', err);
+      console.error('Error while exporting resume HTML:', err);
       console.error(stderr);
     }
     cb(err);
   });
 }
 
-function buildPdf() {
-  return gulp.src('public/index.html')
-    .pipe($.htmlPdf({
-      base: 'file:///Users/alec/projects/personal/cv/public/',
-      border: {
-        top: '2cm',
-        right: '1cm',
-        bottom: '2cm',
-        left: '1cm'
-      },
-    }))
-    .pipe($.rename('alec-rust-cv.pdf'))
-    .pipe(gulp.dest('public'));
+function buildPdf(cb) {
+  exec('npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme .', function (err, stdout, stderr) {
+    if (err) {
+      console.error('Error while exporting resume PDF:', err);
+      console.error(stderr);
+    }
+    cb(err);
+  });
 }
 
 function minifyHtml() {
