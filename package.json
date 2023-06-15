@@ -18,8 +18,8 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-html-minifier": "^0.1.8",
     "gulp-html-pdf": "^0.3.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-postcss": "^7.0.1",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "handlebars": "^4.7.7",
     "normalize.css": "^7.0.0",
@@ -32,7 +32,7 @@
     "postcss-short-size": "^3.0.0",
     "postcss-sorting": "^3.0.1",
     "resume-cli": "^3.0.8",
-    "sugarss": "^1.0.0"
+    "sugarss": "^4.0.1"
   },
   "browserslist": [
     "last 2 versions",
