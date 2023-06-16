@@ -12,12 +12,14 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "test": "cd src && resume validate",
+    "spellcheck": "cspell",
     "prepare": "husky install"
   },
   "browserslist": [
     "defaults"
   ],
   "devDependencies": {
+    "cspell": "^6.31.1",
     "cssnano": "^6.0.1",
     "date-fns": "^2.30.0",
     "eslint": "^8.42.0",
@@ -41,6 +43,8 @@
   },
   "lint-staged": {
     "*.{css,js,md,json}": "prettier --write",
+    "*.{md,hbs}": "cspell --no-must-find-files --no-summary --no-progress",
+    "src/resume.json": "cspell --no-must-find-files --no-summary --no-progress",
     "*.js": "eslint --fix",
     "*.css": "stylelint --fix"
   }

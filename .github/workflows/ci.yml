@@ -47,6 +47,22 @@ jobs:
       - name: Run validate-schema
         run: npm test
 
+  check-spelling:
+    name: Check spelling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "latest"
+          cache: "npm"
+      - name: Install Node packages
+        run: npm ci
+      - name: Run check-spelling
+        run: npm run spellcheck
+
   deploy:
     needs: [lint, validate-schema]
     name: Deploy

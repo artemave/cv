@@ -125,7 +125,7 @@
       "website": "https://www.bbc.co.uk/",
       "startDate": "2008-07-01",
       "endDate": "2009-07-01",
-      "summary": "Selected for the development team that built the customizable, widget-based BBC homepage for domestic users. Worked with BBC Public Service on this project before transitioning to BBC Worldwide, the commercial arm of the BBC.",
+      "summary": "Selected for the development team that built the customisable, widget-based BBC homepage for domestic users. Worked with BBC Public Service on this project before transitioning to BBC Worldwide, the commercial arm of the BBC.",
       "highlights": [
         "Building a high-traffic website accessed by millions of users.",
         "Honing software development best practices in a collaborative team environment.",
@@ -151,7 +151,7 @@
       "website": "http://www.rapp.com/",
       "startDate": "2007-10-01",
       "endDate": "2008-06-01",
-      "summary": "Worked in the technology department of a large agency, learning about efficient development workflows for large teams and managing deadline expectations. Utilized technologies such as Microsoft SourceSafe and adhered to an extensive QA process for our work.",
+      "summary": "Worked in the technology department of a large agency, learning about efficient development workflows for large teams and managing deadline expectations. Utilised technologies such as Microsoft SourceSafe and adhered to an extensive QA process for our work.",
       "highlights": [
         "Building HTML emails for high-profile clients such as Apple, Barclays, and Crisis.",
         "Launching a health information website for Pfizer.",
@@ -164,7 +164,7 @@
       "name": "Technical Skills",
       "keywords": [
         "Modern HTML, CSS, JavaScript",
-        "Performance Optimization & Scalability",
+        "Performance Optimisation & Scalability",
         "Web Accessibility Standards",
         "SEO & Web Analytics Integration",
         "Complex UI/UX Design & Development",
