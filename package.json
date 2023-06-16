@@ -7,41 +7,37 @@
   "repository": "AlecRust/cv",
   "scripts": {
     "start": "resume serve --resume src/resume.json --theme .",
-    "lint": "eslint .",
+    "lint": "prettier --check '**/*.{css,js,md,json}' && eslint .",
+    "format": "prettier --write '**/*.{css,js,md,json}",
     "build": "gulp build",
-    "test": "cd src && resume validate"
+    "test": "cd src && resume validate",
+    "prepare": "husky install"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "cssnano": "^6.0.1",
     "date-fns": "^2.30.0",
     "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
     "gulp": "^4.0.2",
     "gulp-html-minifier": "^0.1.8",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "handlebars": "^4.7.7",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
     "normalize.css": "^8.0.1",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.5.0",
     "postcss-reporter": "^7.0.5",
     "postcss-sorting": "^8.0.2",
+    "prettier": "^2.8.8",
     "resume-cli": "^3.0.8"
   },
-  "browserslist": [
-    "last 2 versions",
-    ">1%"
-  ],
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "node": true,
-      "browser": true
-    },
-    "rules": {
-      "quotes": [
-        2,
-        "single"
-      ]
-    }
+  "lint-staged": {
+    "*.{css,js,md,json}": "prettier --write",
+    "*.js": "eslint --fix"
   }
 }

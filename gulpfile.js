@@ -1,71 +1,85 @@
-const gulp = require('gulp');
-const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
-const htmlMinifier = require('gulp-html-minifier');
-const { exec } = require('child_process');
+const gulp = require("gulp");
+const postcss = require("gulp-postcss");
+const rename = require("gulp-rename");
+const htmlMinifier = require("gulp-html-minifier");
+const { exec } = require("child_process");
 
 const paths = {
-  resume: 'src/resume.json',
-  styles: 'src/styles/**/*.css'
+  resume: "src/resume.json",
+  styles: "src/styles/**/*.css",
 };
 
 function sortRules() {
-  return gulp.src(paths.styles)
-    .pipe(postcss([
-      require('postcss-sorting')({
-        'empty-lines-between-children-rules': 1
-      })
-    ]))
-    .pipe(gulp.dest('src/styles'));
+  return gulp
+    .src(paths.styles)
+    .pipe(
+      postcss([
+        require("postcss-sorting")({
+          "empty-lines-between-children-rules": 1,
+        }),
+      ])
+    )
+    .pipe(gulp.dest("src/styles"));
 }
 
 function styles() {
-  return gulp.src('src/styles/style.css')
-    .pipe(postcss([
-      require('postcss-import'),
-      require('postcss-preset-env')({
-        stage: 0
-      }),
-      require('postcss-reporter')({
-        clearMessages: true
-      }),
-      require('cssnano')({
-        preset: 'default',
-      }),
-    ]))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('public'));
+  return gulp
+    .src("src/styles/style.css")
+    .pipe(
+      postcss([
+        require("postcss-import"),
+        require("postcss-preset-env")({
+          stage: 0,
+        }),
+        require("postcss-reporter")({
+          clearMessages: true,
+        }),
+        require("cssnano")({
+          preset: "default",
+        }),
+      ])
+    )
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest("public"));
 }
 
 function buildHtml() {
-  return execPromise('npx resume export public/index.html --resume src/resume.json --theme .');
+  return execPromise(
+    "npx resume export public/index.html --resume src/resume.json --theme ."
+  );
 }
 
 function buildPdf() {
-  return execPromise('npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme .');
+  return execPromise(
+    "npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme ."
+  );
 }
 
 function minifyHtml() {
-  return gulp.src('public/index.html')
-    .pipe(htmlMinifier({
-      caseSensitive: true,
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      minifyJS: true,
-      removeAttributeQuotes: true,
-      removeComments: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true
-    }))
-    .pipe(gulp.dest('public'));
+  return gulp
+    .src("public/index.html")
+    .pipe(
+      htmlMinifier({
+        caseSensitive: true,
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        removeAttributeQuotes: true,
+        removeComments: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+      })
+    )
+    .pipe(gulp.dest("public"));
 }
 
 function copyJson() {
-  return gulp.src(paths.resume)
-    .pipe(rename('alec-rust-cv.json'))
-    .pipe(gulp.dest('public'));
+  return gulp
+    .src(paths.resume)
+    .pipe(rename("alec-rust-cv.json"))
+    .pipe(gulp.dest("public"));
 }
 
 function watch() {
@@ -87,12 +101,15 @@ function execPromise(command) {
   });
 }
 
-gulp.task('sort-rules', sortRules);
-gulp.task('styles', gulp.series(sortRules, styles));
-gulp.task('build-html', buildHtml);
-gulp.task('build-pdf', buildPdf);
-gulp.task('minify-html', minifyHtml);
-gulp.task('copy-json', copyJson);
-gulp.task('build', gulp.series('styles', 'copy-json', 'build-html', 'build-pdf', 'minify-html'));
-gulp.task('watch', gulp.series('styles', watch));
-gulp.task('default', gulp.series('build'));
+gulp.task("sort-rules", sortRules);
+gulp.task("styles", gulp.series(sortRules, styles));
+gulp.task("build-html", buildHtml);
+gulp.task("build-pdf", buildPdf);
+gulp.task("minify-html", minifyHtml);
+gulp.task("copy-json", copyJson);
+gulp.task(
+  "build",
+  gulp.series("styles", "copy-json", "build-html", "build-pdf", "minify-html")
+);
+gulp.task("watch", gulp.series("styles", watch));
+gulp.task("default", gulp.series("build"));
