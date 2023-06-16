@@ -6,11 +6,8 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-}
 
-@media (--md-viewport-min) {
-
-.Avatar-image {
+  @media (--md-viewport-min) {
     width: 140px;
     height: 140px;
   }

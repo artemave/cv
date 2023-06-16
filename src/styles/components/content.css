@@ -1,11 +1,8 @@
 #content h3 {
   margin-top: -4px;
   font-size: 20px;
-}
 
-@media (--md-viewport-min) {
-
-#content h3 {
+  @media (--md-viewport-min) {
     font-size: 24px;
   }
 }
@@ -17,7 +14,7 @@
 
 #content li:before {
   color: var(--color-green);
-  content: '\2022\00a0\00a0';
+  content: "\2022\00a0\00a0";
   vertical-align: middle;
   font-size: 20px;
 }
@@ -25,11 +22,8 @@
 #content aside {
   padding-right: 30px;
   text-align: right;
-}
 
-@media (--md-viewport-max) {
-
-#content aside {
+  @media (--md-viewport-max) {
     margin-bottom: 20px;
     padding-right: 0;
     text-align: left;

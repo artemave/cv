@@ -23,11 +23,8 @@
 
 #publications .website a:before {
   content: attr(href);
-}
 
-@media (--md-viewport-max) {
-
-#publications .website a:before {
+  @media (--md-viewport-max) {
     content: "View publication";
   }
 }
