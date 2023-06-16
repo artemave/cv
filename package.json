@@ -10,6 +10,7 @@
     "lint": "prettier --check '**/*.{css,js,md,json}' && eslint .",
     "format": "prettier --write '**/*.{css,js,md,json}",
     "build": "gulp build",
+    "watch": "gulp watch",
     "test": "cd src && resume validate",
     "prepare": "husky install"
   },
