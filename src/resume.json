@@ -37,8 +37,8 @@
       "summary": "Working for a small London-based consultancy I led the front end development of all projects, ranging from small startup MVPs to replacing large legacy systems for established companies.",
       "highlights": [
         "Steering the UI/UX process for all projects, gaining invaluable leadership and project management experience.",
-        "Working on a mixture of greenfield projects and replacing legacy systems",
-        "Developing a deeper understanding of various industries through diverse projects, broadening my perspective approach"
+        "Working on a mixture of greenfield projects and replacing legacy systems.",
+        "Developing a deeper understanding of various industries through diverse projects, broadening my perspective approach."
       ]
     },
     {
@@ -156,6 +156,30 @@
         "Building HTML emails for high-profile clients such as Apple, Barclays, and Crisis.",
         "Launching a health information website for Pfizer.",
         "Learning about target audiences through formal user testing."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Technical Skills",
+      "keywords": [
+        "Modern HTML, CSS, JavaScript",
+        "Performance Optimization & Scalability",
+        "Web Accessibility Standards",
+        "SEO & Web Analytics Integration",
+        "Complex UI/UX Design & Development",
+        "Back end integration with UI (Node.js, RoR, APIs)"
+      ]
+    },
+    {
+      "name": "Soft Skills",
+      "keywords": [
+        "Leadership",
+        "Project Management",
+        "Communication",
+        "Problem-Solving",
+        "Team Collaboration",
+        "Detail-Oriented"
       ]
     }
   ]
