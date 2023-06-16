@@ -21,7 +21,7 @@
   margin-top: 8px;
 }
 
-#publications .website a:before {
+#publications .website a::before {
   content: attr(href);
 
   @media (--md-viewport-max) {

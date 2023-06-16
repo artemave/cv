@@ -7,8 +7,8 @@
   "repository": "AlecRust/cv",
   "scripts": {
     "start": "resume serve --resume src/resume.json --theme .",
-    "lint": "prettier --check '**/*.{css,js,md,json}' && eslint .",
-    "format": "prettier --write '**/*.{css,js,md,json}",
+    "lint": "prettier --check '**/*.{css,js,md,json}' && eslint . && stylelint '**/*.css'",
+    "format": "prettier --write '**/*.{css,js,md,json}' && eslint --fix . && stylelint --fix '**/*.css'",
     "build": "gulp build",
     "watch": "gulp watch",
     "test": "cd src && resume validate",
@@ -35,10 +35,13 @@
     "postcss-reporter": "^7.0.5",
     "postcss-sorting": "^8.0.2",
     "prettier": "^2.8.8",
-    "resume-cli": "^3.0.8"
+    "resume-cli": "^3.0.8",
+    "stylelint": "^15.7.0",
+    "stylelint-config-standard": "^33.0.0"
   },
   "lint-staged": {
     "*.{css,js,md,json}": "prettier --write",
-    "*.js": "eslint --fix"
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix"
   }
 }
