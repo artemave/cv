@@ -27,7 +27,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "handlebars": "^4.7.7",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "normalize.css": "^8.0.1",
     "postcss-import": "^15.1.0",
