@@ -46,6 +46,16 @@
             {{.}}
           </h2>
           {{/label}}
+          {{#location}}
+          <p class="Header-labelSecondary">
+            {{#if city}}
+              {{city}},
+            {{/if}}
+            {{#if countryCode}}
+              {{countryCode}}
+            {{/if}}
+          </p>
+          {{/location}}
           {{/resume.basics}}
         </div>
       </div>
