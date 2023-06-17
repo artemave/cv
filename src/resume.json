@@ -5,7 +5,7 @@
     "picture": "https://cv.alecrust.com/alec-rust.jpg",
     "email": "me@alecrust.com",
     "website": "https://www.alecrust.com/",
-    "summary": "Experienced web developer with a dedication to accessibility, performance, SEO and meticulously crafted mobile-first user interfaces.",
+    "summary": "Experienced web developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
     "location": {
       "city": "London",
       "countryCode": "UK"
@@ -34,11 +34,11 @@
       "position": "Head of UI/UX",
       "website": "https://www.featurist.co.uk/",
       "startDate": "2016-07-04",
-      "summary": "Working for a small London-based consultancy I led the front end development of all projects, ranging from small startup MVPs to replacing large legacy systems for established companies.",
+      "summary": "At Featurist, a London-based consultancy, I took the helm of front end development across projects, which included startup MVPs and replacing extensive legacy systems for established companies.",
       "highlights": [
-        "Steering the UI/UX process for all projects, gaining invaluable leadership and project management experience.",
-        "Working on a mixture of greenfield projects and replacing legacy systems, using wide range of tech from Node to Rails.",
-        "Developing a deeper understanding of various industries through diverse projects, broadening my perspective approach."
+        "Led the UI/UX process for all projects, honing my leadership and project management skills.",
+        "Worked on greenfield projects and legacy system replacements, utilizing a diverse tech stack from Node.js to Rails.",
+        "Gained insights into various industries through diverse projects, which improved my problem-solving approach."
       ]
     },
     {
@@ -47,11 +47,11 @@
       "website": "http://www.bbc.co.uk/bbcthree",
       "startDate": "2015-06-01",
       "endDate": "2016-06-30",
-      "summary": "Worked on a team developing a modern, magazine-style web application to replace the BBC Three TV channel. Used Node and React to meet a range of stakeholder needs and deliver an engaging user experience.",
+      "summary": "At my second stint at the BBC I was part of the development team that built a modern, magazine-style website to transition BBC Three from a TV channel to the web. Utilizing Node.js and React, we focused on fulfilling diverse stakeholder needs while ensuring an engaging user experience.",
       "highlights": [
-        "Conducting user testing with our target audience, which led to the development of interactive and fun website features.",
-        "Creating an internal library for efficient and consistent display of BBC content 'cards'.",
-        "Expanding my technical skill set by learning and implementing new technologies like Node, React, Webpack, and Babel."
+        "Conducted user testing, which informed the development of interactive features, enhancing user engagement.",
+        "Developed an internal library for efficient and consistent display of BBC content 'cards', streamlining content management.",
+        "Strengthened my technical abilities by adopting new technologies including Node.js, React, webpack, and Babel."
       ]
     },
     {
@@ -60,11 +60,11 @@
       "website": "https://shopa.com/",
       "startDate": "2014-05-01",
       "endDate": "2015-04-16",
-      "summary": "Led the front end development as the company expanded to over 20 employees and secured additional investment. Enhanced the technology stack to ensure it could scale alongside the company's growth.",
+      "summary": "As Director of Front End Engineering at Shopa, I took charge of front end development while the company expanded and secured additional investment. I focused on evolving the technology stack to ensure scalability in line with company growth.",
       "highlights": [
-        "Managing end-to-end website maintenance and exploring a variety of dev ops tools.",
-        "Balancing business expectations with technical capabilities to meet project goals.",
-        "Expanding my knowledge and skills by learning technologies like Go, Elasticsearch, and Gulp."
+        "Oversaw front end implementation and maintenance, alongside dev ops tools ensuring website reliability.",
+        "Navigated the balance between business expectations and technical capabilities, delivering on project objectives.",
+        "Broadened my expertise by learning about technologies such as Go, Elasticsearch, and Gulp."
       ]
     },
     {
@@ -73,11 +73,11 @@
       "website": "https://shopa.com/",
       "startDate": "2014-01-13",
       "endDate": "2014-05-01",
-      "summary": "Joined Shopa, a new social shopping startup, to contribute to the development of their initial web and mobile applications. Upon securing investment, transitioned into a permanent role to build the team and oversee front end development.",
+      "summary": "At Shopa, a social shopping startup, I was instrumental in developing the initial web and mobile applications. I then transitioned into a development-management role to build a capable team and oversee front end development.",
       "highlights": [
-        "Iterating on prototypes and ideas rapidly to ensure a fast feedback loop.",
-        "Experimenting with innovative technologies in a collaborative and relaxed work environment.",
-        "Gaining knowledge of Ruby on Rails and adopting new methodologies like SUIT CSS."
+        "Rapidly iterated on prototypes, establishing a fast feedback loop crucial to the startup phase.",
+        "Experimented with cutting-edge technologies in a collaborative setting.",
+        "Enhanced my skill set with Ruby on Rails and integrated new methodologies like SUIT CSS."
       ]
     },
     {
@@ -86,11 +86,11 @@
       "website": "http://www.universalmusic.com/",
       "startDate": "2011-12-12",
       "endDate": "2014-01-10",
-      "summary": "Worked on a diverse range of artist and record label websites, gaining familiarity with the Umbraco CMS. Gave presentations on mobile-first best practices and contributed to the development of tools and best practices for the team.",
+      "summary": "At Universal Music Group, I worked on a range of artist and record label websites. I introduced mobile-first best practices through presentations and actively contributed to the development of tools and best practices for the team.",
       "highlights": [
-        "Leading the front end development for the new classical music site, Sinfini Music.",
-        "Launching a mobile-first website for the Mercury Records music label.",
-        "Creating the 'UMG Boilerplate' to streamline application building for teams."
+        "Led front end development for the Sinfini Music site, delivering a new platform for classical music enthusiasts.",
+        "launched a new website for Mercury Records, enhancing the mobile user experience.",
+        "Created the 'UMG Boilerplate', a tool that streamlined development processes for teams."
       ]
     },
     {
@@ -99,11 +99,11 @@
       "website": "http://www.bbc.com/",
       "startDate": "2010-10-01",
       "endDate": "2011-12-01",
-      "summary": "Joined the BBC.com development team to contribute to the launch and maintenance of a new site version for international users. Managed analytics requirements and advertising code, often requiring innovative technical solutions.",
+      "summary": "In the BBC.com development team I contributed to the launch and maintenance of an updated BBC.com for international users. I helped manage analytics and advertising code, often requiring innovative technical solutions.",
       "highlights": [
-        "Completing Adobe SiteCatalyst Implementation Training to enhance site analytics.",
-        "Analysing global traffic patterns using Keynote for improved user understanding.",
-        "Learning about and implementing continuous integration, TDD, and BDD in the workflow."
+        "Completed Adobe SiteCatalyst Implementation Training to improve site analytics.",
+        "Analysed global traffic patterns using Keynote for insightful user understanding.",
+        "Learned about and implemented continuous integration, TDD, and BDD."
       ]
     },
     {
@@ -112,11 +112,11 @@
       "website": "https://www.bbc.co.uk/",
       "startDate": "2009-07-01",
       "endDate": "2010-10-01",
-      "summary": "Worked within the Digital Delivery team maintaining 'passion sites' like BBC Good Food, Gardeners' World, and Radio Times. Worked across multiple projects, consistently solving problems across a network of websites.",
+      "summary": "At BBC Worldwide, as part of the Digital Delivery team, I worked on maintaining and enhancing several 'passion sites' including BBC Good Food, Gardeners' World, and Radio Times, focusing on problem-solving and user experience improvement.",
       "highlights": [
-        "Rebuilding the Top Gear website for the UK audience.",
-        "Developing new features and microsites for various BBC websites.",
-        "Gaining knowledge about website localisation and GeoIP technologies."
+        "Participated in rebuilding the Top Gear website, optimizing navigation and performance.",
+        "Developed and integrated new features and microsites for various BBC websites.",
+        "Expanded knowledge in website localisation and effectively applied GeoIP technologies."
       ]
     },
     {
@@ -125,11 +125,11 @@
       "website": "https://www.bbc.co.uk/",
       "startDate": "2008-07-01",
       "endDate": "2009-07-01",
-      "summary": "Selected for the development team that built the customisable, widget-based BBC homepage for domestic users. Worked with BBC Public Service on this project before transitioning to BBC Worldwide, the commercial arm of the BBC.",
+      "summary": "Selected for the development team that revamped the BBC domestic homepage into a customizable, widget-based layout, enhancing usability for a large audience.",
       "highlights": [
-        "Building a high-traffic website accessed by millions of users.",
-        "Honing software development best practices in a collaborative team environment.",
-        "Learning about dev ops in the context of a large site, including CDNs, caching layers, etc."
+        "Contributed to a homepage redesign that improved usability for millions of daily users.",
+        "Collaborated closely with a skilled team, refining development best practices.",
+        "Dived into dev ops, learning about CDNs and caching strategies for large-scale websites."
       ]
     },
     {
@@ -138,11 +138,11 @@
       "website": "https://www.alecrust.com/",
       "startDate": "2004-01-01",
       "endDate": "2009-06-01",
-      "summary": "As a freelancer, I gained comprehensive knowledge of web development, from design to databases and security. Delivered solutions for small businesses using software like WordPress, Drupal, and Magento, as well as creating bespoke applications and user interfaces for start-ups.",
+      "summary": "As a freelance developer, I became adept in a wide range of areas of web development and catered to diverse client needs, from small businesses to start-ups. I utilized popular CMS platforms and also engineered bespoke solutions.",
       "highlights": [
-        "Gaining exposure to diverse businesses and their unique requirements.",
-        "Developing a scalable solution for hosting and monitoring numerous websites.",
-        "Launching a question-and-answer platform for general contractors."
+        "Developed websites for a range of businesses, adapting to unique needs.",
+        "Implemented a scalable hosting and monitoring solution for multiple clients.",
+        "Launched a Q&A platform for general contractors, among other projects."
       ]
     },
     {
@@ -151,11 +151,11 @@
       "website": "http://www.rapp.com/",
       "startDate": "2007-10-01",
       "endDate": "2008-06-01",
-      "summary": "Worked in the technology department of a large agency, learning about efficient development workflows for large teams and managing deadline expectations. Utilised technologies such as Microsoft SourceSafe and adhered to an extensive QA process for our work.",
+      "summary": "At RAPP, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
       "highlights": [
-        "Building HTML emails for high-profile clients such as Apple, Barclays, and Crisis.",
-        "Launching a health information website for Pfizer.",
-        "Learning about target audiences through formal user testing."
+        "Contributed to the launch of Pfizer’s health information website.",
+        "Built HTML emails for high-profile clients like Apple and Barclays.",
+        "Gained insights into user preferences through formal user testing."
       ]
     }
   ],
