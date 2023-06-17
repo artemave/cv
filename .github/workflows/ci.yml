@@ -60,7 +60,7 @@ jobs:
           cache: "npm"
       - name: Install Node packages
         run: npm ci
-      - name: Run check-spelling
+      - name: Run spellcheck
         run: npm run spellcheck
 
   deploy:
