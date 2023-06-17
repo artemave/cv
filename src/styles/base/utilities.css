@@ -22,7 +22,7 @@
 .u-cf::before,
 .u-cf::after {
   display: table;
-  content: " ";
+  content: ' ';
 }
 
 .u-cf::after {

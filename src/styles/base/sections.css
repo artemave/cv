@@ -25,7 +25,7 @@
   content: attr(href);
 
   @media (--md-viewport-max) {
-    content: "View publication";
+    content: 'View publication';
   }
 }
 

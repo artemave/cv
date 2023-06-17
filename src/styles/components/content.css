@@ -14,7 +14,7 @@
 
 #content li::before {
   color: var(--color-green);
-  content: "\2022\00a0\00a0";
+  content: '\2022\00a0\00a0';
   vertical-align: middle;
   font-size: 20px;
 }
