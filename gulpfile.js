@@ -3,6 +3,7 @@ const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const htmlMinifier = require('gulp-html-minifier')
 const { exec } = require('child_process')
+const puppeteer = require('puppeteer')
 
 const paths = {
   resume: 'src/resume.json',
@@ -43,16 +44,37 @@ function styles() {
     .pipe(gulp.dest('public'))
 }
 
-function buildHtml() {
-  return execPromise(
-    'npx resume export public/index.html --resume src/resume.json --theme .'
+function buildHtml(cb) {
+  exec(
+    'npx resume export public/index.html --resume src/resume.json --theme .',
+    function (err, stdout, stderr) {
+      if (err) {
+        console.error('Error exporting HTML with resume-cli:', err)
+        console.error(stderr)
+      }
+      cb(err)
+    }
   )
 }
 
-function buildPdf() {
-  return execPromise(
-    'npx resume export public/alec-rust-cv.pdf --resume src/resume.json --theme .'
-  )
+async function buildPdf() {
+  const browser = await puppeteer.launch({
+    headless: 'new',
+  })
+  const page = await browser.newPage()
+  await page.goto(`file://${__dirname}/public/index.html`, {
+    waitUntil: 'networkidle0',
+  })
+  await page.pdf({
+    path: 'public/alec-rust-cv.pdf',
+    margin: {
+      top: '2cm',
+      right: '2cm',
+      bottom: '2cm',
+      left: '2cm',
+    },
+  })
+  await browser.close()
 }
 
 function minifyHtml() {
@@ -85,20 +107,6 @@ function copyJson() {
 function watch() {
   gulp.watch(paths.resume, copyJson)
   gulp.watch(paths.styles, styles)
-}
-
-function execPromise(command) {
-  return new Promise((resolve, reject) => {
-    exec(command, (err, stdout, stderr) => {
-      if (err) {
-        console.error(`Error while executing command "${command}":`, err)
-        console.error(stderr)
-        reject(err)
-      } else {
-        resolve(stdout)
-      }
-    })
-  })
 }
 
 gulp.task('sort-rules', sortRules)
