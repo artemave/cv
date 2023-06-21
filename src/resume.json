@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Alec Rust",
-    "label": "Web Developer",
-    "picture": "https://cv.alecrust.com/alec-rust.jpg",
+    "label": "Senior Web Developer",
+    "picture": "alec-rust.jpg",
     "email": "me@alecrust.com",
     "website": "https://www.alecrust.com/",
-    "summary": "Experienced web developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
+    "summary": "Experienced self-taught developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
     "location": {
       "city": "London",
       "countryCode": "UK"
@@ -51,7 +51,7 @@
       "highlights": [
         "Conducted user testing, which informed the development of interactive features, enhancing user engagement.",
         "Developed an internal library for efficient and consistent display of BBC content 'cards', streamlining content management.",
-        "Strengthened my technical abilities by adopting new technologies including Node.js, React, webpack, and Babel."
+        "Adopted and strengthened my abilities in new technologies such as Node.js, React, webpack, and Babel."
       ]
     },
     {
@@ -163,12 +163,16 @@
     {
       "name": "Technical Skills",
       "keywords": [
-        "Modern HTML, CSS, JavaScript",
-        "Performance Optimisation & Scalability",
+        "Modern HTML5, CSS3, ES6",
+        "React, Vue.js, Node.js, Ruby on Rails",
+        "Bootstrap, Tailwind, Material UI etc.",
+        "webpack, Babel, ESLint, Prettier, Jest",
+        "CI with GitHub Actions, CircleCI etc.",
+        "WordPress LAMP stack with Bootstrap, jQuery etc.",
+        "Strong design sensibilities, Sketch, Figma etc.",
         "Web Accessibility Standards",
-        "SEO & Web Analytics Integration",
-        "Complex UI/UX Design & Development",
-        "Back end integration with UI (Node.js, RoR, APIs)"
+        "Performance Optimisation & Scalability",
+        "SEO expertise including analytics integration"
       ]
     },
     {
