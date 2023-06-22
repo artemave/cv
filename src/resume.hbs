@@ -80,7 +80,9 @@
           {{#email}}
           <div class="col-sm-6">
             <strong>Email</strong>
-            <div class="email">{{.}}</div>
+            <div class="email">
+              <a href="mailto:{{.}}">{{.}}</a>
+            </div>
           </div>
           {{/email}}
           {{#phone}}
