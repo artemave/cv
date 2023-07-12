@@ -15,7 +15,7 @@ Handlebars.registerHelper('friendlyDate', function (datestamp) {
 function render(resume) {
   const tpl = fs.readFileSync(
     path.join(__dirname, 'src', 'resume.hbs'),
-    'utf-8'
+    'utf-8',
   )
   const compile = Handlebars.compile(tpl)
   return compile({ resume })

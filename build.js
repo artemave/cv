@@ -45,7 +45,7 @@ function buildHtml() {
         }
         console.log('✅ HTML exported')
         resolve()
-      }
+      },
     )
   })
 }
