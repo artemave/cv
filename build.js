@@ -1,5 +1,5 @@
 const postcss = require('postcss')
-const fs = require('fs').promises
+const fs = require('fs-extra')
 const chokidar = require('chokidar')
 const { exec } = require('child_process')
 const puppeteer = require('puppeteer')
@@ -25,7 +25,7 @@ async function styles() {
       from: inputPath,
       to: outputPath,
     })
-    await fs.writeFile(outputPath, result.css)
+    await fs.outputFile(outputPath, result.css)
     console.log(`✅ CSS built`)
   } catch (error) {
     console.error('❌ Error processing CSS:', error)
@@ -87,7 +87,7 @@ async function minifyHtml() {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
     })
-    await fs.writeFile(inputPath, minified)
+    await fs.outputFile(inputPath, minified)
     console.log(`✅ HTML minified`)
   } catch (error) {
     console.error('❌ Error minifying HTML:', error)
@@ -95,12 +95,22 @@ async function minifyHtml() {
   }
 }
 
-async function copyJson() {
+async function copyResumeJson() {
   try {
-    await fs.copyFile(paths.resume, 'public/alec-rust-cv.json')
+    await fs.copy(paths.resume, 'public/alec-rust-cv.json')
     console.log('✅ JSON copied')
   } catch (error) {
     console.error('❌ Error copying JSON:', error)
+    process.exit(1)
+  }
+}
+
+async function copyPublic() {
+  try {
+    await fs.copy('src/public', 'public')
+    console.log('✅ Public assets copied')
+  } catch (error) {
+    console.error('❌ Error copying public assets:', error)
     process.exit(1)
   }
 }
@@ -117,14 +127,15 @@ function watch() {
 
   chokidar.watch(paths.resume, { ignoreInitial: true }).on('all', async () => {
     console.log('Changes detected in resume.json')
-    await copyJson()
+    await copyResumeJson()
   })
 }
 
 async function build() {
   console.log('🚀 Building assets...')
   await styles()
-  await copyJson()
+  await copyResumeJson()
+  await copyPublic()
   await buildHtml()
   await buildPdf()
   await minifyHtml()
