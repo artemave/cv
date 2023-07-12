@@ -12,7 +12,7 @@ const paths = {
 
 async function styles() {
   const inputPath = 'src/styles/style.css'
-  const outputPath = 'public/style.min.css'
+  const outputPath = 'dist/style.min.css'
   try {
     const css = await fs.readFile(inputPath, 'utf8')
     const result = await postcss([
@@ -36,7 +36,7 @@ async function styles() {
 function buildHtml() {
   return new Promise((resolve, reject) => {
     exec(
-      'npx resume export public/index.html --resume src/resume.json --theme .',
+      'npx resume export dist/index.html --resume src/resume.json --theme .',
       function (err, stdout, stderr) {
         if (err) {
           console.error('Error exporting HTML with resume-cli:', err)
@@ -55,11 +55,11 @@ async function buildPdf() {
     headless: 'new',
   })
   const page = await browser.newPage()
-  await page.goto(`file://${__dirname}/public/index.html`, {
+  await page.goto(`file://${__dirname}/dist/index.html`, {
     waitUntil: 'networkidle0',
   })
   await page.pdf({
-    path: 'public/alec-rust-cv.pdf',
+    path: 'dist/alec-rust-cv.pdf',
     margin: {
       top: '2cm',
       right: '2cm',
@@ -72,7 +72,7 @@ async function buildPdf() {
 }
 
 async function minifyHtml() {
-  const inputPath = 'public/index.html'
+  const inputPath = 'dist/index.html'
   try {
     const html = await fs.readFile(inputPath, 'utf8')
     const minified = htmlMinifier(html, {
@@ -97,7 +97,7 @@ async function minifyHtml() {
 
 async function copyResumeJson() {
   try {
-    await fs.copy(paths.resume, 'public/alec-rust-cv.json')
+    await fs.copy(paths.resume, 'dist/alec-rust-cv.json')
     console.log('✅ JSON copied')
   } catch (error) {
     console.error('❌ Error copying JSON:', error)
@@ -107,7 +107,7 @@ async function copyResumeJson() {
 
 async function copyPublic() {
   try {
-    await fs.copy('src/public', 'public')
+    await fs.copy('src/public', 'dist')
     console.log('✅ Public assets copied')
   } catch (error) {
     console.error('❌ Error copying public assets:', error)
