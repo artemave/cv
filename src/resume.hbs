@@ -38,68 +38,68 @@
     <header class="Header">
       <div class="Container u-cf">
         <div class="row u-cf">
-          {{#resume.basics}}
-          {{#picture}}
+          {{#with resume.basics}}
+          {{#if picture}}
           <div class="Avatar">
-            <img src="{{.}}" width="140" height="140" alt="Photo of Alec Rust" class="Avatar-image">
+            <img src="{{picture}}" width="140" height="140" alt="Photo of Alec Rust" class="Avatar-image">
           </div>
-          {{/picture}}
-          {{#name}}
+          {{/if}}
+          {{#if name}}
           <h1 class="Header-name">
-            {{.}}
+            {{name}}
           </h1>
-          {{/name}}
-          {{#label}}
+          {{/if}}
+          {{#if label}}
           <h2 class="Header-label">
-            {{.}}
+            {{label}}
           </h2>
-          {{/label}}
-          {{#location}}
+          {{/if}}
+          {{#if location}}
           <p class="Header-labelSecondary">
-            {{#if city}}
-              {{city}},
+            {{#if location.city}}
+              {{location.city}},
             {{/if}}
-            {{#if countryCode}}
-              {{countryCode}}
+            {{#if location.countryCode}}
+              {{location.countryCode}}
             {{/if}}
           </p>
-          {{/location}}
-          {{/resume.basics}}
+          {{/if}}
+          {{/with}}
         </div>
       </div>
     </header>
 
     <main id="content" class="Container u-cf">
 
-      {{#resume.basics}}
+      {{#with resume.basics}}
       <section id="contact" class="Section row u-cf">
         <aside class="col-sm-3">
           <h3>Contact</h3>
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#email}}
+          {{#if email}}
           <div class="col-sm-6">
             <strong>Email</strong>
             <div class="email">
-              <a href="mailto:{{.}}">{{.}}</a>
+              <a href="mailto:{{email}}">{{email}}</a>
             </div>
           </div>
-          {{/email}}
-          {{#phone}}
+          {{/if}}
+          {{#if phone}}
           <div class="col-sm-6">
             <strong>Phone</strong>
-            <div class="phone">{{.}}</div>
+            <div class="phone">{{phone}}</div>
           </div>
-          {{/phone}}
-          {{#website}}
+          {{/if}}
+          {{#if website}}
           <div class="col-sm-6">
             <strong>Website</strong>
             <div class="website">
-              <a href="{{.}}">{{.}}</a>
+              <a href="{{website}}">{{website}}</a>
             </div>
           </div>
-          {{/website}}
+          {{/if}}
           </div>
         </div>
       </section>
@@ -108,9 +108,9 @@
           <h3>About</h3>
         </aside>
         <div class="col-sm-9">
-        {{#summary}}
-          <p>{{.}}</p>
-        {{/summary}}
+        {{#if summary}}
+          <p>{{summary}}</p>
+        {{/if}}
         </div>
       </section>
       {{#if profiles.length}}
@@ -120,13 +120,13 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-            {{#profiles}}
+            {{#each profiles}}
             <div class="col-sm-4">
-              {{#network}}
+              {{#if network}}
               <strong class="network">
-                {{.}}
+                {{network}}
               </strong>
-              {{/network}}
+              {{/if}}
               {{#if username}}
               <div class="username">
                 {{#if url}}
@@ -145,12 +145,12 @@
                 {{/if}}
               {{/if}}
             </div>
-            {{/profiles}}
+            {{/each}}
           </div>
         </div>
       </section>
       {{/if}}
-      {{/resume.basics}}
+      {{/with}}
 
       {{#if resume.work.length}}
       <section id="work" class="Section row u-cf">
@@ -159,36 +159,36 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.work}}
+          {{#each resume.work as |work|}}
           <div class="col-sm-12">
             <h4 class="strike-through">
-              <span>{{company}}</span>
+              <span>{{work.company}}</span>
               <div class="date">
-                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
-                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+                <time datetime="{{work.startDate}}">{{friendlyDate work.startDate}}</time> -
+                <time datetime="{{work.endDate}}">{{friendlyDate work.endDate}}</time>
               </div>
             </h4>
-            {{#website}}
+            {{#if work.website}}
             <div class="website u-floatRight">
-              <a href="{{.}}">{{.}}</a>
+              <a href="{{work.website}}">{{work.website}}</a>
             </div>
-            {{/website}}
-            {{#position}}
+            {{/if}}
+            {{#if work.position}}
             <div class="position">
-              {{.}}
+              {{work.position}}
             </div>
-            {{/position}}
-            {{#summary}}
+            {{/if}}
+            {{#if work.summary}}
             <div class="summary">
-              <p>{{.}}</p>
+              <p>{{work.summary}}</p>
             </div>
-            {{/summary}}
-            {{#if highlights.length}}
+            {{/if}}
+            {{#if work.highlights.length}}
             <h4>Highlights</h4>
             <ul class="highlights">
-              {{#highlights}}
-              <li>{{.}}</li>
-              {{/highlights}}
+              {{#each work.highlights as |highlight|}}
+              <li>{{highlight}}</li>
+              {{/each}}
             </ul>
             {{/if}}
           </div>
@@ -205,36 +205,36 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.volunteer}}
+          {{#each resume.volunteer as |volunteer|}}
           <div class="col-sm-12">
             <h4 class="strike-through">
-              <span>{{organization}}</span>
+              <span>{{volunteer.organization}}</span>
               <div class="date">
-                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
-                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+                <time datetime="{{volunteer.startDate}}">{{friendlyDate volunteer.startDate}}</time> -
+                <time datetime="{{volunteer.endDate}}">{{friendlyDate volunteer.endDate}}</time>
               </div>
             </h4>
-            {{#website}}
+            {{#if volunteer.website}}
             <div class="website u-floatRight">
-              <a href="{{.}}">{{.}}</a>
+              <a href="{{volunteer.website}}">{{volunteer.website}}</a>
             </div>
-            {{/website}}
-            {{#position}}
+            {{/if}}
+            {{#if volunteer.position}}
             <div class="position">
-              {{.}}
+              {{volunteer.position}}
             </div>
-            {{/position}}
-            {{#summary}}
+            {{/if}}
+            {{#if volunteer.summary}}
             <div class="summary">
-              <p>{{.}}</p>
+              <p>{{volunteer.summary}}</p>
             </div>
-            {{/summary}}
-            {{#if highlights.length}}
+            {{/if}}
+            {{#if volunteer.highlights.length}}
             <h4>Highlights</h4>
             <ul class="highlights">
-              {{#highlights}}
-              <li>{{.}}</li>
-              {{/highlights}}
+              {{#each volunteer.highlights as |highlight|}}
+              <li>{{highlight}}</li>
+              {{/each}}
             </ul>
             {{/if}}
           </div>
@@ -251,31 +251,31 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.education}}
+          {{#each resume.education as |education|}}
           <div class="col-sm-12">
             <h4 class="strike-through">
-              <span>{{institution}}</span>
+              <span>{{education.institution}}</span>
               <div class="date">
-                <time datetime="{{startDate}}">{{friendlyDate startDate}}</time> -
-                <time datetime="{{endDate}}">{{friendlyDate endDate}}</time>
+                <time datetime="{{education.startDate}}">{{friendlyDate education.startDate}}</time> -
+                <time datetime="{{education.endDate}}">{{friendlyDate education.endDate}}</time>
               </div>
             </h4>
-            {{#area}}
+            {{#if education.area}}
             <div class="area">
-              {{.}}
+              {{education.area}}
             </div>
-            {{/area}}
-            {{#studyType}}
+            {{/if}}
+            {{#if education.studyType}}
             <div class="studyType">
-              {{.}}
+              {{education.studyType}}
             </div>
-            {{/studyType}}
-            {{#if courses.length}}
+            {{/if}}
+            {{#if education.courses.length}}
             <h4>Courses</h4>
             <ul class="courses">
-              {{#courses}}
-              <li>{{.}}</li>
-              {{/courses}}
+              {{#each education.courses as |course|}}
+              <li>{{course}}</li>
+              {{/each}}
             </ul>
             {{/if}}
           </div>
@@ -292,28 +292,28 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.awards}}
+          {{#each resume.awards as |award|}}
           <div class="col-sm-12">
             <h4 class="strike-through">
-              <span>{{title}}</span>
+              <span>{{award.title}}</span>
             </h4>
-            {{#date}}
+            {{#if award.date}}
             <div class="date u-floatRight">
               <em>Awarded</em>
-              {{.}}
+              {{award.date}}
             </div>
-            {{/date}}
-            {{#awarder}}
+            {{/if}}
+            {{#if award.awarder}}
             <div class="awarder">
               <em>by</em>
-              <strong>{{.}}</strong>
+              <strong>{{award.awarder}}</strong>
             </div>
-            {{/awarder}}
-            {{#summary}}
+            {{/if}}
+            {{#if award.summary}}
             <div class="summary">
-              {{.}}
+              {{award.summary}}
             </div>
-            {{/summary}}
+            {{/if}}
           </div>
           {{/each}}
           </div>
@@ -328,30 +328,30 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.publications}}
+          {{#each resume.publications as |publication|}}
           <div class="col-sm-12">
             <h4 class="strike-through">
-              <span>{{name}}</span>
+              <span>{{publication.name}}</span>
               <div class="date">
-                <time datetime="{{releaseDate}}">{{friendlyDate releaseDate}}</time>
+                <time datetime="{{publication.releaseDate}}">{{friendlyDate publication.releaseDate}}</time>
               </div>
             </h4>
-            {{#website}}
+            {{#if publication.website}}
             <div class="website u-floatRight">
-              <a href="{{.}}"></a>
+              <a href="{{publication.website}}"></a>
             </div>
-            {{/website}}
-            {{#publisher}}
+            {{/if}}
+            {{#if publication.publisher}}
             <div class="publisher">
               <em>Published by</em>
-              <strong>{{.}}</strong>
+              <strong>{{publication.publisher}}</strong>
             </div>
-            {{/publisher}}
-            {{#summary}}
+            {{/if}}
+            {{#if publication.summary}}
             <div class="summary">
-              <p>{{.}}</p>
+              <p>{{publication.summary}}</p>
             </div>
-            {{/summary}}
+            {{/if}}
           </div>
           {{/each}}
           </div>
@@ -366,18 +366,18 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.skills}}
+          {{#each resume.skills as |skill|}}
           <div class="col-sm-6">
-            {{#name}}
+            {{#if skill.name}}
             <div class="name">
-              <h4>{{.}}</h4>
+              <h4>{{skill.name}}</h4>
             </div>
-            {{/name}}
-            {{#if keywords.length}}
+            {{/if}}
+            {{#if skill.keywords.length}}
             <ul class="keywords">
-              {{#keywords}}
-              <li>{{.}}</li>
-              {{/keywords}}
+              {{#each skill.keywords as |keyword|}}
+              <li>{{keyword}}</li>
+              {{/each}}
             </ul>
             {{/if}}
           </div>
@@ -394,18 +394,18 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.languages}}
+          {{#each resume.languages as |language|}}
           <div class="col-sm-6">
-            {{#language}}
+            {{#if language.language}}
             <div class="language">
-              <strong>{{.}}</strong>
+              <strong>{{language.language}}</strong>
             </div>
-            {{/language}}
-            {{#fluency}}
+            {{/if}}
+            {{#if language.fluency}}
             <div class="fluency">
-              {{.}}
+              {{language.fluency}}
             </div>
-            {{/fluency}}
+            {{/if}}
           </div>
           {{/each}}
           </div>
@@ -420,18 +420,18 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.interests}}
+          {{#each resume.interests as |interest|}}
           <div class="col-sm-6">
-            {{#name}}
+            {{#if interest.name}}
             <div class="name">
-              <h4>{{.}}</h4>
+              <h4>{{interest.name}}</h4>
             </div>
-            {{/name}}
-            {{#if keywords.length}}
+            {{/if}}
+            {{#if interest.keywords.length}}
             <ul class="keywords">
-              {{#keywords}}
-              <li>{{.}}</li>
-              {{/keywords}}
+              {{#each interest.keywords as |keyword|}}
+              <li>{{keyword}}</li>
+              {{/each}}
             </ul>
             {{/if}}
           </div>
@@ -448,16 +448,16 @@
         </aside>
         <div class="col-sm-9">
           <div class="row u-cf">
-          {{#each resume.references}}
+          {{#each resume.references as |reference|}}
           <div class="col-sm-12">
-            {{#if reference}}
+            {{#if reference.reference}}
             <blockquote class="reference">
-              <p>{{reference}}</p>
-              {{#name}}
+              <p>{{reference.reference}}</p>
+              {{#if reference.name}}
               <p class="name">
-                <strong>— {{.}}</strong>
+                <strong>— {{reference.name}}</strong>
               </p>
-              {{/name}}
+              {{/if}}
             </blockquote>
             {{/if}}
           </div>
