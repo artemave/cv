@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "resume serve --resume src/resume.json --theme .",
     "build": "node build.js",
-    "lint": "prettier --check '**/*.{css,js,md,json}' && eslint . && stylelint '**/*.css'",
-    "format": "prettier --write '**/*.{css,js,md,json}' && eslint --fix . && stylelint --fix '**/*.css'",
+    "lint": "prettier --check . && eslint . && stylelint '**/*.css'",
+    "format": "prettier --write . && eslint --fix . && stylelint --fix '**/*.css'",
     "watch": "node build.js --watch",
     "test": "cd src && resume validate",
     "spellcheck": "cspell",
@@ -39,7 +39,7 @@
     "stylelint-config-standard": "^34.0.0"
   },
   "lint-staged": {
-    "*.{css,js,md,json}": "prettier --write",
+    "*": "prettier --write --ignore-unknown",
     "*.{md,hbs}": "cspell --no-must-find-files --no-summary --no-progress",
     "src/resume.json": "cspell --no-must-find-files --no-summary --no-progress",
     "*.js": "eslint --fix",
