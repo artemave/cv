@@ -1,24 +1,3 @@
-.u-hiddenVisually {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-}
-
-.u-hiddenVisually.focusable:active,
-.u-hiddenVisually.focusable:focus {
-  position: static;
-  overflow: visible;
-  clip: auto;
-  margin: 0;
-  width: auto;
-  height: auto;
-}
-
 .u-cf::before,
 .u-cf::after {
   display: table;
