@@ -16,6 +16,9 @@
   "browserslist": [
     "defaults"
   ],
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "chokidar": "^3.5.3",
     "cspell": "^6.31.1",
@@ -27,7 +30,6 @@
     "handlebars": "^4.7.7",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "normalize.css": "^8.0.1",
     "postcss": "^8.4.26",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.0.0",
