@@ -1,19 +1,22 @@
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const Handlebars = require('handlebars')
-const parseISO = require('date-fns/parseISO')
-const formatDate = require('date-fns/format')
+const { parseISO, format } = require('date-fns')
+
+/**
+ * Renders resume.bhs with Handlebars as a JSON Resume theme
+ */
 
 Handlebars.registerHelper('friendlyDate', function (datestamp) {
   if (datestamp) {
     const date = parseISO(datestamp)
-    return formatDate(date, 'do MMM yyyy')
+    return format(date, 'do MMM yyyy')
   }
   return 'present'
 })
 
-function render(resume) {
-  const tpl = fs.readFileSync(
+async function render(resume) {
+  const tpl = await fs.readFile(
     path.join(__dirname, 'src', 'resume.hbs'),
     'utf-8',
   )
