@@ -1,13 +1,21 @@
 const postcss = require('postcss')
 const fs = require('fs-extra')
 const chokidar = require('chokidar')
-const { exec } = require('child_process')
+const { exec: execCallback } = require('child_process')
+const util = require('util')
+const exec = util.promisify(execCallback)
 const puppeteer = require('puppeteer')
 const htmlMinifier = require('html-minifier').minify
 
-const paths = {
-  resume: 'src/resume.json',
-  styles: 'src/styles/**/*.css',
+async function copyPublic() {
+  try {
+    await fs.copy('src/public', 'public')
+    await fs.copy('src/resume.json', 'public/alec-rust-cv.json')
+    console.log('✅ Public files copied')
+  } catch (error) {
+    console.error('❌ Error copying public files:', error)
+    process.exit(1)
+  }
 }
 
 async function buildHtml() {
@@ -17,14 +25,15 @@ async function buildHtml() {
     )
     console.log('✅ HTML built')
   } catch (error) {
-    console.error('Error exporting HTML with resume-cli:', error)
+    console.error('❌ Error building HTML:', error)
+    process.exit(1)
   }
 }
 
 async function buildStyles() {
-  const inputPath = 'src/styles/style.css'
-  const outputPath = 'public/style.min.css'
   try {
+    const inputPath = 'src/styles/style.css'
+    const outputPath = 'public/style.min.css'
     const css = await fs.readFile(inputPath, 'utf8')
     const result = await postcss([
       require('postcss-import'),
@@ -39,56 +48,15 @@ async function buildStyles() {
     await fs.outputFile(outputPath, result.css)
     console.log(`✅ CSS built`)
   } catch (error) {
-    console.error('❌ Error processing CSS:', error)
+    console.error('❌ Error building CSS:', error)
     process.exit(1)
   }
-}
-
-async function copyResumeJson() {
-  try {
-    await fs.copy(paths.resume, 'public/alec-rust-cv.json')
-    console.log('✅ JSON copied')
-  } catch (error) {
-    console.error('❌ Error copying JSON:', error)
-    process.exit(1)
-  }
-}
-
-async function copyPublic() {
-  try {
-    await fs.copy('src/public', 'public')
-    console.log('✅ Public files copied')
-  } catch (error) {
-    console.error('❌ Error copying public assets:', error)
-    process.exit(1)
-  }
-}
-
-async function buildPdf() {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-  })
-  const page = await browser.newPage()
-  await page.goto(`file://${__dirname}/public/index.html`, {
-    waitUntil: 'networkidle0',
-  })
-  await page.pdf({
-    path: 'public/alec-rust-cv.pdf',
-    margin: {
-      top: '2cm',
-      right: '2cm',
-      bottom: '2cm',
-      left: '2cm',
-    },
-  })
-  await browser.close()
-  console.log('✅ PDF built')
 }
 
 async function minifyHtml() {
-  const inputPath = 'public/index.html'
   try {
-    const html = await fs.readFile(inputPath, 'utf8')
+    const htmlPath = 'public/index.html'
+    const html = await fs.readFile(htmlPath, 'utf8')
     const minified = htmlMinifier(html, {
       caseSensitive: true,
       collapseBooleanAttributes: true,
@@ -101,7 +69,7 @@ async function minifyHtml() {
       removeScriptTypeAttributes: true,
       removeStyleLinkTypeAttributes: true,
     })
-    await fs.outputFile(inputPath, minified)
+    await fs.outputFile(htmlPath, minified)
     console.log(`✅ HTML minified`)
   } catch (error) {
     console.error('❌ Error minifying HTML:', error)
@@ -109,30 +77,48 @@ async function minifyHtml() {
   }
 }
 
+async function buildPdf() {
+  try {
+    const browser = await puppeteer.launch({ headless: 'new' })
+    const page = await browser.newPage()
+    await page.goto(`file://${__dirname}/public/index.html`, {
+      waitUntil: 'networkidle0',
+    })
+    await page.pdf({
+      path: 'public/alec-rust-cv.pdf',
+      margin: { top: '2cm', right: '2cm', bottom: '2cm', left: '2cm' },
+    })
+    await browser.close()
+    console.log('✅ PDF built')
+  } catch (error) {
+    console.error('❌ Error building PDF:', error)
+    process.exit(1)
+  }
+}
+
 function watch() {
   console.log('👀 Watching for changes...')
-
   chokidar
-    .watch(paths.styles, { ignoreInitial: true })
+    .watch('src/styles/**/*.css', { ignoreInitial: true })
     .on('all', async (event, path) => {
-      console.log(`Changes detected in styles: ${path}`)
+      console.log(`🛠️ Changes detected in ${path}`)
       await buildStyles()
     })
-
-  chokidar.watch(paths.resume, { ignoreInitial: true }).on('all', async () => {
-    console.log('Changes detected in resume.json')
-    await copyResumeJson()
-  })
+  chokidar
+    .watch('src/resume.json', { ignoreInitial: true })
+    .on('all', async (event, path) => {
+      console.log(`🛠️ Changes detected in ${path}`)
+      await copyPublic()
+    })
 }
 
 async function build() {
   console.log('🚀 Building assets...')
+  await copyPublic()
   await buildHtml()
   await buildStyles()
-  await copyResumeJson()
-  await copyPublic()
-  await buildPdf()
   await minifyHtml()
+  await buildPdf()
   console.log('🎉 Build completed.')
 
   if (process.argv.includes('--watch')) {
