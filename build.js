@@ -10,7 +10,18 @@ const paths = {
   styles: 'src/styles/**/*.css',
 }
 
-async function styles() {
+async function buildHtml() {
+  try {
+    await exec(
+      'npx resume export public/index.html --resume src/resume.json --theme .',
+    )
+    console.log('✅ HTML built')
+  } catch (error) {
+    console.error('Error exporting HTML with resume-cli:', error)
+  }
+}
+
+async function buildStyles() {
   const inputPath = 'src/styles/style.css'
   const outputPath = 'public/style.min.css'
   try {
@@ -33,21 +44,24 @@ async function styles() {
   }
 }
 
-function buildHtml() {
-  return new Promise((resolve, reject) => {
-    exec(
-      'npx resume export public/index.html --resume src/resume.json --theme .',
-      function (err, stdout, stderr) {
-        if (err) {
-          console.error('Error exporting HTML with resume-cli:', err)
-          console.error(stderr)
-          reject(err)
-        }
-        console.log('✅ HTML exported')
-        resolve()
-      },
-    )
-  })
+async function copyResumeJson() {
+  try {
+    await fs.copy(paths.resume, 'public/alec-rust-cv.json')
+    console.log('✅ JSON copied')
+  } catch (error) {
+    console.error('❌ Error copying JSON:', error)
+    process.exit(1)
+  }
+}
+
+async function copyPublic() {
+  try {
+    await fs.copy('src/public', 'public')
+    console.log('✅ Public files copied')
+  } catch (error) {
+    console.error('❌ Error copying public assets:', error)
+    process.exit(1)
+  }
 }
 
 async function buildPdf() {
@@ -68,7 +82,7 @@ async function buildPdf() {
     },
   })
   await browser.close()
-  console.log('✅ PDF generated')
+  console.log('✅ PDF built')
 }
 
 async function minifyHtml() {
@@ -95,26 +109,6 @@ async function minifyHtml() {
   }
 }
 
-async function copyResumeJson() {
-  try {
-    await fs.copy(paths.resume, 'public/alec-rust-cv.json')
-    console.log('✅ JSON copied')
-  } catch (error) {
-    console.error('❌ Error copying JSON:', error)
-    process.exit(1)
-  }
-}
-
-async function copyPublic() {
-  try {
-    await fs.copy('src/public', 'public')
-    console.log('✅ Public assets copied')
-  } catch (error) {
-    console.error('❌ Error copying public assets:', error)
-    process.exit(1)
-  }
-}
-
 function watch() {
   console.log('👀 Watching for changes...')
 
@@ -122,7 +116,7 @@ function watch() {
     .watch(paths.styles, { ignoreInitial: true })
     .on('all', async (event, path) => {
       console.log(`Changes detected in styles: ${path}`)
-      await styles()
+      await buildStyles()
     })
 
   chokidar.watch(paths.resume, { ignoreInitial: true }).on('all', async () => {
@@ -133,10 +127,10 @@ function watch() {
 
 async function build() {
   console.log('🚀 Building assets...')
-  await styles()
+  await buildHtml()
+  await buildStyles()
   await copyResumeJson()
   await copyPublic()
-  await buildHtml()
   await buildPdf()
   await minifyHtml()
   console.log('🎉 Build completed.')
