@@ -5,7 +5,6 @@ const { exec: execCallback } = require('child_process')
 const util = require('util')
 const exec = util.promisify(execCallback)
 const puppeteer = require('puppeteer')
-const htmlMinifier = require('html-minifier').minify
 
 async function copyPublic() {
   try {
@@ -53,30 +52,6 @@ async function buildStyles() {
   }
 }
 
-async function minifyHtml() {
-  try {
-    const htmlPath = 'public/index.html'
-    const html = await fs.readFile(htmlPath, 'utf8')
-    const minified = htmlMinifier(html, {
-      caseSensitive: true,
-      collapseBooleanAttributes: true,
-      collapseWhitespace: true,
-      minifyJS: true,
-      removeAttributeQuotes: true,
-      removeComments: true,
-      removeOptionalTags: true,
-      removeRedundantAttributes: true,
-      removeScriptTypeAttributes: true,
-      removeStyleLinkTypeAttributes: true,
-    })
-    await fs.outputFile(htmlPath, minified)
-    console.log(`✅ HTML minified`)
-  } catch (error) {
-    console.error('❌ Error minifying HTML:', error)
-    process.exit(1)
-  }
-}
-
 async function buildPdf() {
   try {
     const browser = await puppeteer.launch({ headless: 'new' })
@@ -117,7 +92,6 @@ async function build() {
   await copyPublic()
   await buildHtml()
   await buildStyles()
-  await minifyHtml()
   await buildPdf()
   console.log('🎉 Build completed.')
 
