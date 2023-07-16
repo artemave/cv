@@ -4,7 +4,7 @@
   "private": true,
   "author": "Alec Rust (https://www.alecrust.com/)",
   "scripts": {
-    "dev": "resume serve --resume src/resume.json --theme .",
+    "dev": "npm run build && resume serve --resume src/resume.json --theme .",
     "build": "node build.js",
     "lint": "prettier --check . && eslint . && stylelint '**/*.css'",
     "format": "prettier --write . && eslint --fix . && stylelint --fix '**/*.css'",
