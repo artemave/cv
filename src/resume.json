@@ -44,7 +44,7 @@
     {
       "company": "BBC",
       "position": "Senior Web Developer",
-      "website": "http://www.bbc.co.uk/bbcthree",
+      "website": "https://www.bbc.co.uk/bbcthree",
       "startDate": "2015-06-01",
       "endDate": "2016-06-30",
       "summary": "At my second stint at the BBC I was part of the development team that built a modern, magazine-style website to transition BBC Three from a TV channel to the web. Utilising Node.js and React, we focused on fulfilling diverse stakeholder needs while ensuring an engaging user experience.",
@@ -83,7 +83,7 @@
     {
       "company": "Universal Music Group",
       "position": "Front End Developer",
-      "website": "http://www.universalmusic.com/",
+      "website": "https://www.universalmusic.com/",
       "startDate": "2011-12-12",
       "endDate": "2014-01-10",
       "summary": "At Universal Music Group, I worked on a range of artist and record label websites. I introduced mobile-first best practices through presentations and actively contributed to the development of tools and best practices for the team.",
@@ -96,7 +96,7 @@
     {
       "company": "BBC Worldwide",
       "position": "Commercial Developer",
-      "website": "http://www.bbc.com/",
+      "website": "https://www.bbc.com/",
       "startDate": "2010-10-01",
       "endDate": "2011-12-01",
       "summary": "In the BBC.com development team I contributed to the launch and maintenance of an updated BBC.com for international users. I helped manage analytics and advertising code, often requiring innovative technical solutions.",
@@ -148,7 +148,7 @@
     {
       "company": "RAPP",
       "position": "Web Developer",
-      "website": "http://www.rapp.com/",
+      "website": "https://www.rapp.com/",
       "startDate": "2007-10-01",
       "endDate": "2008-06-01",
       "summary": "At RAPP, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
