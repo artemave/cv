@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: read
@@ -65,7 +65,7 @@ jobs:
         run: npm run spellcheck
 
   deploy:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs: [lint, validate-schema, check-spelling]
     name: Deploy
     runs-on: ubuntu-latest
