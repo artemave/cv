@@ -41,9 +41,9 @@
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
-    "*.{md,hbs}": "cspell --no-must-find-files --no-summary --no-progress",
-    "src/resume.json": "cspell --no-must-find-files --no-summary --no-progress",
     "*.js": "eslint --fix",
-    "*.css": "stylelint --fix"
+    "*.css": "stylelint --fix",
+    "*.{md,hbs}": "cspell --no-must-find-files --no-summary --no-progress",
+    "src/resume.json": "cspell --no-must-find-files --no-summary --no-progress"
   }
 }
