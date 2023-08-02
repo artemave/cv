@@ -1,13 +1,11 @@
 @import url("normalize.css");
 @import url("./base/vars");
 @import url("./base/base");
-@import url("./base/grid");
-@import url("./base/sections");
 @import url("./components/avatar");
 @import url("./components/container");
-@import url("./components/content");
 @import url("./components/header");
+@import url("./components/labelled-list");
 @import url("./components/menu");
 @import url("./components/section");
-@import url("./components/strike-through");
+@import url("./components/strike-heading");
 @import url("./base/utilities");

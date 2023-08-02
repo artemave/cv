@@ -1,3 +1,23 @@
 .Section {
   margin-top: 40px;
+
+  @media (--md-viewport-min) {
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 50px;
+  }
+}
+
+.Section-heading {
+  font-size: 20px;
+  margin-bottom: 15px;
+
+  @media (--md-viewport-min) {
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 0;
+  }
+}
+
+.Section-content {
 }

@@ -35,425 +35,168 @@
     </nav>
 
     <header class="Header">
-      <div class="Container u-cf">
-        <div class="row u-cf">
-          {{#with resume.basics}}
-            {{#if picture}}
-              <div class="Avatar">
-                <img
-                  src="{{picture}}"
-                  width="140"
-                  height="140"
-                  alt="Photo of Alec Rust"
-                  class="Avatar-image"
-                />
-              </div>
-            {{/if}}
-            {{#if name}}
-              <h1 class="Header-name">{{name}}</h1>
-            {{/if}}
-            {{#if label}}
-              <h2 class="Header-label">{{label}}</h2>
-            {{/if}}
-            {{#if location}}
-              <p class="Header-labelSecondary">
-                {{#if location.city}} {{location.city}}, {{/if}}
-                {{#if location.countryCode}} {{location.countryCode}} {{/if}}
-              </p>
-            {{/if}}
-          {{/with}}
-        </div>
+      <div class="Container">
+        {{#with resume.basics}}
+          {{#if picture}}
+            <div class="Avatar">
+              <img
+                src="{{picture}}"
+                width="140"
+                height="140"
+                alt="Photo of Alec Rust"
+                class="Avatar-image"
+              />
+            </div>
+          {{/if}}
+          {{#if name}}
+            <h1 class="Header-name">{{name}}</h1>
+          {{/if}}
+          {{#if label}}
+            <h2 class="Header-label">{{label}}</h2>
+          {{/if}}
+          {{#if location}}
+            <p class="Header-labelSecondary">
+              {{#if location.city}} {{location.city}}, {{/if}}
+              {{#if location.countryCode}} {{location.countryCode}} {{/if}}
+            </p>
+          {{/if}}
+        {{/with}}
       </div>
     </header>
 
-    <main id="content" class="Container u-cf">
+    <main class="Container">
+
       {{#with resume.basics}}
-        <section id="contact" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Contact</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
+        <section class="Section">
+          <h2 class="Section-heading">Contact</h2>
+          <div class="Section-content">
+            <ul class="LabelledList">
               {{#if email}}
-                <div class="col-sm-6">
-                  <strong>Email</strong>
-                  <div class="email">
-                    <a href="mailto:{{email}}">{{email}}</a>
-                  </div>
-                </div>
+                <li class="LabelledList-item">
+                  <p class="u-textBold">Email</p>
+                  <a href="mailto:{{email}}">{{email}}</a>
+                </li>
               {{/if}}
               {{#if phone}}
-                <div class="col-sm-6">
-                  <strong>Phone</strong>
-                  <div class="phone">{{phone}}</div>
-                </div>
+                <li class="LabelledList-item">
+                  <p class="u-textBold">Phone</p>
+                  <p>{{phone}}</p>
+                </li>
               {{/if}}
               {{#if website}}
-                <div class="col-sm-6">
-                  <strong>Website</strong>
-                  <div class="website">
-                    <a href="{{website}}">{{website}}</a>
-                  </div>
-                </div>
+                <li class="LabelledList-item">
+                  <p class="u-textBold">Website</p>
+                  <a href="{{website}}">{{website}}</a>
+                </li>
               {{/if}}
-            </div>
+            </ul>
           </div>
         </section>
-        <section id="about" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>About</h3>
-          </aside>
-          <div class="col-sm-9">
+        <section class="Section">
+          <h2 class="Section-heading">About</h2>
+          <div class="Section-content">
             {{#if summary}}
               <p>{{summary}}</p>
             {{/if}}
           </div>
         </section>
         {{#if profiles.length}}
-          <section id="profiles" class="Section row u-cf">
-            <aside class="col-sm-3">
-              <h3>Profiles</h3>
-            </aside>
-            <div class="col-sm-9">
-              <div class="row u-cf">
+          <section class="Section">
+            <h2 class="Section-heading">Profiles</h2>
+            <div class="Section-content">
+              <ul class="LabelledList">
                 {{#each profiles}}
-                  <div class="col-sm-4">
+                  <li class="LabelledList-item">
                     {{#if network}}
-                      <strong class="network"> {{network}} </strong>
+                      <p class="u-textBold">{{network}}</p>
                     {{/if}}
                     {{#if username}}
-                      <div class="username">
-                        {{#if url}}
-                          <div class="url">
-                            <a href="{{url}}">{{username}}</a>
-                          </div>
-                        {{else}} {{username}} {{/if}}
-                      </div>
+                      {{#if url}}
+                        <a href="{{url}}">{{username}}</a>
+                      {{else}}
+                        <p>{{username}}</p>
+                      {{/if}}
                     {{else}}
                       {{#if url}}
-                        <div class="url">
-                          <a href="{{url}}">{{url}}</a>
-                        </div>
+                        <a href="{{url}}">{{url}}</a>
                       {{/if}}
                     {{/if}}
-                  </div>
+                  </li>
                 {{/each}}
-              </div>
+              </ul>
             </div>
           </section>
         {{/if}}
       {{/with}}
+
       {{#if resume.work.length}}
-        <section id="work" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Work</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.work as |work|}}
-                <div class="col-sm-12">
-                  <h4 class="strike-through">
-                    <span>{{work.company}}</span>
-                    <div class="date">
-                      <time datetime="{{work.startDate}}">{{friendlyDate
-                          work.startDate
-                        }}</time>
-                      -
-                      <time datetime="{{work.endDate}}">{{friendlyDate
-                          work.endDate
-                        }}</time>
-                    </div>
-                  </h4>
-                  {{#if work.website}}
-                    <div class="website u-floatRight">
-                      <a href="{{work.website}}">{{work.website}}</a>
-                    </div>
-                  {{/if}}
+        <section class="Section">
+          <h2 class="Section-heading">Work</h2>
+          <div class="Section-content">
+            {{#each resume.work as |work|}}
+              <div class="u-mb30">
+                <div class="StrikeHeading u-mb10">
+                  <h3 class="StrikeHeading-heading">{{work.company}}</h3>
+                  <div class="StrikeHeading-line"></div>
+                  <p class="StrikeHeading-asideContent">
+                    <time datetime="{{work.startDate}}">{{friendlyDate
+                        work.startDate
+                      }}</time>
+                    -
+                    <time datetime="{{work.endDate}}">{{friendlyDate
+                        work.endDate
+                      }}</time>
+                  </p>
+                </div>
+                <div class="u-sideBySide u-mb10">
                   {{#if work.position}}
-                    <div class="position">{{work.position}}</div>
+                    <p class="u-textBold">{{work.position}}</p>
                   {{/if}}
-                  {{#if work.summary}}
-                    <div class="summary">
-                      <p>{{work.summary}}</p>
-                    </div>
-                  {{/if}}
-                  {{#if work.highlights.length}}
-                    <h4>Highlights</h4>
-                    <ul class="highlights">
-                      {{#each work.highlights as |highlight|}}
-                        <li>{{highlight}}</li>
-                      {{/each}}
-                    </ul>
+                  {{#if work.website}}
+                    <a href="{{work.website}}">{{work.website}}</a>
                   {{/if}}
                 </div>
-              {{/each}}
-            </div>
+                {{#if work.summary}}
+                  <div class="u-mb10">
+                    <p>{{work.summary}}</p>
+                  </div>
+                {{/if}}
+                {{#if work.highlights.length}}
+                  <h4>Highlights</h4>
+                  <ul class="u-bulletedList">
+                    {{#each work.highlights as |highlight|}}
+                      <li>{{highlight}}</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </div>
+            {{/each}}
           </div>
         </section>
       {{/if}}
-      {{#if resume.volunteer.length}}
-        <section id="volunteer" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Volunteer</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.volunteer as |volunteer|}}
-                <div class="col-sm-12">
-                  <h4 class="strike-through">
-                    <span>{{volunteer.organization}}</span>
-                    <div class="date">
-                      <time datetime="{{volunteer.startDate}}">{{friendlyDate
-                          volunteer.startDate
-                        }}</time>
-                      -
-                      <time datetime="{{volunteer.endDate}}">{{friendlyDate
-                          volunteer.endDate
-                        }}</time>
-                    </div>
-                  </h4>
-                  {{#if volunteer.website}}
-                    <div class="website u-floatRight">
-                      <a href="{{volunteer.website}}">{{volunteer.website}}</a>
-                    </div>
-                  {{/if}}
-                  {{#if volunteer.position}}
-                    <div class="position">{{volunteer.position}}</div>
-                  {{/if}}
-                  {{#if volunteer.summary}}
-                    <div class="summary">
-                      <p>{{volunteer.summary}}</p>
-                    </div>
-                  {{/if}}
-                  {{#if volunteer.highlights.length}}
-                    <h4>Highlights</h4>
-                    <ul class="highlights">
-                      {{#each volunteer.highlights as |highlight|}}
-                        <li>{{highlight}}</li>
-                      {{/each}}
-                    </ul>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
-      {{#if resume.education.length}}
-        <section id="education" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Education</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.education as |education|}}
-                <div class="col-sm-12">
-                  <h4 class="strike-through">
-                    <span>{{education.institution}}</span>
-                    <div class="date">
-                      <time datetime="{{education.startDate}}">{{friendlyDate
-                          education.startDate
-                        }}</time>
-                      -
-                      <time datetime="{{education.endDate}}">{{friendlyDate
-                          education.endDate
-                        }}</time>
-                    </div>
-                  </h4>
-                  {{#if education.area}}
-                    <div class="area">{{education.area}}</div>
-                  {{/if}}
-                  {{#if education.studyType}}
-                    <div class="studyType">{{education.studyType}}</div>
-                  {{/if}}
-                  {{#if education.courses.length}}
-                    <h4>Courses</h4>
-                    <ul class="courses">
-                      {{#each education.courses as |course|}}
-                        <li>{{course}}</li>
-                      {{/each}}
-                    </ul>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
-      {{#if resume.awards.length}}
-        <section id="awards" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Awards</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.awards as |award|}}
-                <div class="col-sm-12">
-                  <h4 class="strike-through">
-                    <span>{{award.title}}</span>
-                  </h4>
-                  {{#if award.date}}
-                    <div class="date u-floatRight">
-                      <em>Awarded</em>
-                      {{award.date}}
-                    </div>
-                  {{/if}}
-                  {{#if award.awarder}}
-                    <div class="awarder">
-                      <em>by</em>
-                      <strong>{{award.awarder}}</strong>
-                    </div>
-                  {{/if}}
-                  {{#if award.summary}}
-                    <div class="summary">{{award.summary}}</div>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
-      {{#if resume.publications.length}}
-        <section id="publications" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Publications</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.publications as |publication|}}
-                <div class="col-sm-12">
-                  <h4 class="strike-through">
-                    <span>{{publication.name}}</span>
-                    <div class="date">
-                      <time
-                        datetime="{{publication.releaseDate}}"
-                      >{{friendlyDate publication.releaseDate}}</time>
-                    </div>
-                  </h4>
-                  {{#if publication.website}}
-                    <div class="website u-floatRight">
-                      <a href="{{publication.website}}"></a>
-                    </div>
-                  {{/if}}
-                  {{#if publication.publisher}}
-                    <div class="publisher">
-                      <em>Published by</em>
-                      <strong>{{publication.publisher}}</strong>
-                    </div>
-                  {{/if}}
-                  {{#if publication.summary}}
-                    <div class="summary">
-                      <p>{{publication.summary}}</p>
-                    </div>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
+
       {{#if resume.skills.length}}
-        <section id="skills" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Skills</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.skills as |skill|}}
-                <div class="col-sm-6">
-                  {{#if skill.name}}
-                    <div class="name">
-                      <h4>{{skill.name}}</h4>
-                    </div>
-                  {{/if}}
-                  {{#if skill.keywords.length}}
-                    <ul class="keywords">
-                      {{#each skill.keywords as |keyword|}}
-                        <li>{{keyword}}</li>
-                      {{/each}}
-                    </ul>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
+        <section class="Section">
+          <h2 class="Section-heading">Skills</h2>
+          <div class="Section-content">
+            {{#each resume.skills as |skill|}}
+              <div>
+                {{#if skill.name}}
+                  <p class="u-textBold">{{skill.name}}</p>
+                {{/if}}
+                {{#if skill.keywords.length}}
+                  <ul class="u-bulletedList u-mb10">
+                    {{#each skill.keywords as |keyword|}}
+                      <li>{{keyword}}</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </div>
+            {{/each}}
           </div>
         </section>
       {{/if}}
-      {{#if resume.languages.length}}
-        <section id="languages" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Languages</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.languages as |language|}}
-                <div class="col-sm-6">
-                  {{#if language.language}}
-                    <div class="language">
-                      <strong>{{language.language}}</strong>
-                    </div>
-                  {{/if}}
-                  {{#if language.fluency}}
-                    <div class="fluency">{{language.fluency}}</div>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
-      {{#if resume.interests.length}}
-        <section id="interests" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>Interests</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.interests as |interest|}}
-                <div class="col-sm-6">
-                  {{#if interest.name}}
-                    <div class="name">
-                      <h4>{{interest.name}}</h4>
-                    </div>
-                  {{/if}}
-                  {{#if interest.keywords.length}}
-                    <ul class="keywords">
-                      {{#each interest.keywords as |keyword|}}
-                        <li>{{keyword}}</li>
-                      {{/each}}
-                    </ul>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
-      {{#if resume.references.length}}
-        <section id="references" class="Section row u-cf">
-          <aside class="col-sm-3">
-            <h3>References</h3>
-          </aside>
-          <div class="col-sm-9">
-            <div class="row u-cf">
-              {{#each resume.references as |reference|}}
-                <div class="col-sm-12">
-                  {{#if reference.reference}}
-                    <blockquote class="reference">
-                      <p>{{reference.reference}}</p>
-                      {{#if reference.name}}
-                        <p class="name">
-                          <strong>— {{reference.name}}</strong>
-                        </p>
-                      {{/if}}
-                    </blockquote>
-                  {{/if}}
-                </div>
-              {{/each}}
-            </div>
-          </div>
-        </section>
-      {{/if}}
+
     </main>
   </body>
 </html>

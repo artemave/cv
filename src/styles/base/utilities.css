@@ -8,10 +8,42 @@
   clear: both;
 }
 
-.u-floatRight {
-  float: right !important;
+.u-textBold {
+  font-weight: bold;
 }
 
-.u-floatLeft {
-  float: left !important;
+.u-bulletedList {
+  padding-left: 30px;
+
+  & li {
+    list-style: none;
+    text-indent: -15px;
+
+    &::before {
+      color: var(--color-green);
+      content: "\2022\00a0\00a0";
+      vertical-align: middle;
+      font-size: 20px;
+    }
+  }
+}
+
+.u-sideBySide {
+  @media (--sm-viewport-min) {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
+
+.u-mb10 {
+  margin-bottom: 10px;
+}
+
+.u-mb20 {
+  margin-bottom: 20px;
+}
+
+.u-mb30 {
+  margin-bottom: 30px;
 }

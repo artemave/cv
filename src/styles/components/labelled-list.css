@@ -1,0 +1,22 @@
+.LabelledList {
+  @media (--sm-viewport-min) {
+    display: flex;
+  }
+}
+
+.LabelledList-item {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (--sm-viewport-min) {
+    margin-bottom: 0;
+    margin-right: 25%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

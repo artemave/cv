@@ -1,3 +1,8 @@
+/* TODO: Rewrite this using flexbox, remove .u-cf */
+
+.Menu {
+}
+
 .Menu-list {
   margin-bottom: 0;
   padding-left: 0;
@@ -10,10 +15,10 @@
   width: 33.33%;
   border-right: 1px solid var(--color-light-gray);
   font-size: 12px;
-}
 
-.Menu-item:nth-child(3) {
-  border-right: 0;
+  &:nth-child(3) {
+    border-right: 0;
+  }
 }
 
 .Menu-item--main {
@@ -50,10 +55,10 @@
   padding: 10px;
   background-color: #f4f6f6;
   text-align: center;
-}
 
-.Menu-link:hover {
-  background-color: #fff;
+  &:hover {
+    background-color: #fff;
+  }
 }
 
 @media print {
