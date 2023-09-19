@@ -13,17 +13,14 @@
 }
 
 .u-bulletedList {
+  list-style-type: disc;
   padding-left: 30px;
 
   & li {
-    list-style: none;
-    text-indent: -15px;
+    margin-bottom: 10px;
 
-    &::before {
+    &::marker {
       color: var(--color-green);
-      content: "\2022\00a0\00a0";
-      vertical-align: middle;
-      font-size: 20px;
     }
   }
 }
