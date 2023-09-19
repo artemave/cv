@@ -4,6 +4,6 @@
   padding: 0 30px;
 
   @media (--md-viewport-min) {
-    width: 750px;
+    width: 768px;
   }
 }
