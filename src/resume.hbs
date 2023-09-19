@@ -162,7 +162,7 @@
                   </div>
                 {{/if}}
                 {{#if work.highlights.length}}
-                  <h4>Highlights</h4>
+                  <h4 class="u-mb10">Highlights</h4>
                   <ul class="u-bulletedList">
                     {{#each work.highlights as |highlight|}}
                       <li>{{highlight}}</li>
@@ -182,7 +182,7 @@
             {{#each resume.skills as |skill|}}
               <div>
                 {{#if skill.name}}
-                  <p class="u-textBold">{{skill.name}}</p>
+                  <p class="u-textBold u-mb10">{{skill.name}}</p>
                 {{/if}}
                 {{#if skill.keywords.length}}
                   <ul class="u-bulletedList u-mb10">
