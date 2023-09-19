@@ -5,7 +5,7 @@
     "picture": "alec-rust.jpg",
     "email": "me@alecrust.com",
     "website": "https://www.alecrust.com/",
-    "summary": "Experienced self-taught developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
+    "summary": "Experienced front end developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
     "location": {
       "city": "London",
       "countryCode": "UK"
@@ -34,7 +34,7 @@
       "position": "Head of UI/UX",
       "website": "https://featurist.co.uk/",
       "startDate": "2016-07-04",
-      "summary": "At Featurist, a London-based consultancy, I took the helm of front end development across projects, which included startup MVPs and replacing extensive legacy systems for established companies.",
+      "summary": "At this London-based consultancy, I led the front end and UX development across projects. The diverse work ranged from small MVP mobile apps to large legacy system replacements, including a multi-tenant e-commerce platform.",
       "highlights": [
         "Led the UI/UX process for all projects, honing my leadership and project management skills.",
         "Worked on greenfield projects and legacy system replacements, utilising a diverse tech stack from Node.js to Rails.",
@@ -47,11 +47,11 @@
       "website": "https://www.bbc.co.uk/bbcthree",
       "startDate": "2015-06-01",
       "endDate": "2016-06-30",
-      "summary": "At my second stint at the BBC I was part of the development team that built a modern, magazine-style website to transition BBC Three from a TV channel to the web. Utilising Node.js and React, we focused on fulfilling diverse stakeholder needs while ensuring an engaging user experience.",
+      "summary": "At my second stint at the BBC I was part of the small development team that built a modern, React-based website to transition BBC Three from a TV channel to the web. We successfully fulfilled diverse stakeholder needs while ensuring an engaging user experience.",
       "highlights": [
         "Conducted user testing, which informed the development of interactive features, enhancing user engagement.",
         "Developed an internal library for efficient and consistent display of BBC content 'cards', streamlining content management.",
-        "Adopted and strengthened my abilities in new technologies such as Node.js, React, webpack, and Babel."
+        "Adopted and strengthened my abilities in new technologies such as Node.js, React, webpack and Babel."
       ]
     },
     {
@@ -60,7 +60,7 @@
       "website": "https://shopa.com/",
       "startDate": "2014-05-01",
       "endDate": "2015-04-16",
-      "summary": "As the Director of Front End Engineering at Shopa, I led the small front end development team as the company grew and attracted more funding. We delivered reusable components and a robust front end architecture, which enabled the company to scale and adapt to changing business needs.",
+      "summary": "As the Director of Front End Engineering at Shopa, I led the small front end development team as the company grew and attracted more funding. We delivered reusable components and a robust front end architecture, enabling the company to scale and adapt to changing business needs.",
       "highlights": [
         "Oversaw front end implementation and maintenance, alongside dev ops tools ensuring website reliability.",
         "Navigated the balance between business expectations and technical capabilities, delivering on project objectives.",
@@ -86,7 +86,7 @@
       "website": "https://www.universalmusic.com/",
       "startDate": "2011-12-12",
       "endDate": "2014-01-10",
-      "summary": "At Universal Music Group, I worked on a range of artist and record label websites. I introduced mobile-first best practices through presentations and actively contributed to the development of tools and best practices for the team.",
+      "summary": "At Universal Music Group, I worked on a range of artist and record label websites. I introduced mobile-first best practices into the development workflow and actively contributed to tools and guidelines for the team.",
       "highlights": [
         "Led front end development for the Sinfini Music site, delivering a new platform for classical music enthusiasts.",
         "launched a new website for Mercury Records, enhancing the mobile user experience.",
@@ -99,7 +99,7 @@
       "website": "https://www.bbc.com/",
       "startDate": "2010-10-01",
       "endDate": "2011-12-01",
-      "summary": "In the BBC.com development team I contributed to the launch and maintenance of an updated BBC.com for international users. I helped manage analytics and advertising code, often requiring innovative technical solutions.",
+      "summary": "In the BBC.com development team I contributed to the launch and maintenance of an updated BBC home page for international users. I also helped manage analytics and advertising code, and implemented GeoIP and CDN solutions.",
       "highlights": [
         "Completed Adobe SiteCatalyst Implementation Training to improve site analytics.",
         "Analysed global traffic patterns using Keynote for insightful user understanding.",
@@ -151,7 +151,7 @@
       "website": "https://www.rapp.com/",
       "startDate": "2007-10-01",
       "endDate": "2008-06-01",
-      "summary": "At RAPP, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
+      "summary": "At my first job in the city, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
       "highlights": [
         "Contributed to the launch of Pfizer’s health information website.",
         "Built HTML emails for high-profile clients like Apple and Barclays.",
@@ -165,11 +165,11 @@
       "keywords": [
         "Modern HTML5, CSS3, ES6",
         "React, Vue.js, Node.js, Next.js, Ruby on Rails",
-        "Bootstrap, Tailwind, Material UI etc.",
-        "webpack, Babel, ESLint, Prettier, Jest",
-        "CI with GitHub Actions, CircleCI etc.",
-        "WordPress LAMP stack with Bootstrap, jQuery etc.",
-        "Strong design sensibilities, Sketch, Figma etc.",
+        "Tailwind CSS, NextUI, Material UI, Bootstrap etc.",
+        "webpack, esbuild, Babel, ESLint, Prettier, Jest",
+        "CI with GitHub Actions, CircleCI, Semaphore CI etc.",
+        "WordPress LAMP stack with MySQL, jQuery etc.",
+        "Strong design and UX sensibilities, Sketch, Figma etc.",
         "Web Accessibility Standards",
         "Performance Optimisation & Scalability",
         "SEO expertise including analytics integration"
@@ -180,10 +180,9 @@
       "keywords": [
         "Leadership",
         "Project Management",
-        "Communication",
-        "Problem-Solving",
+        "Written & Verbal Communication",
         "Team Collaboration",
-        "Detail-Oriented"
+        "Detail Oriented"
       ]
     }
   ]
