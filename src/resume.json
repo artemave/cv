@@ -34,6 +34,7 @@
       "position": "Head of UI/UX",
       "website": "https://featurist.co.uk/",
       "startDate": "2016-07-04",
+      "endDate": "2023-06-30",
       "summary": "At this London-based consultancy, I led the front end and UX development across projects. The diverse work ranged from small MVP mobile apps to large legacy system replacements, including a multi-tenant e-commerce platform.",
       "highlights": [
         "Led the UI/UX process for all projects, honing my leadership and project management skills.",
@@ -151,7 +152,7 @@
       "website": "https://www.rapp.com/",
       "startDate": "2007-10-01",
       "endDate": "2008-06-01",
-      "summary": "At my first job in the city, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
+      "summary": "At my first job in London, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
       "highlights": [
         "Contributed to the launch of Pfizer’s health information website.",
         "Built HTML emails for high-profile clients like Apple and Barclays.",
@@ -163,26 +164,26 @@
     {
       "name": "Technical Skills",
       "keywords": [
-        "Modern HTML5, CSS3, ES6",
-        "React, Vue.js, Node.js, Next.js, Ruby on Rails",
+        "HTML5, CSS3, ES6, Node.js, TypeScript",
+        "React, Vue.js, Stimulus, Next.js, Ruby on Rails",
         "Tailwind CSS, NextUI, Material UI, Bootstrap etc.",
         "webpack, esbuild, Babel, ESLint, Prettier, Jest",
         "CI with GitHub Actions, CircleCI, Semaphore CI etc.",
-        "WordPress LAMP stack with MySQL, jQuery etc.",
-        "Strong design and UX sensibilities, Sketch, Figma etc.",
-        "Web Accessibility Standards",
-        "Performance Optimisation & Scalability",
-        "SEO expertise including analytics integration"
+        "WordPress LAMP stack with MySQL, PHP, jQuery etc.",
+        "Strong design and UX skills, Sketch, Affinity, Figma etc.",
+        "Web accessibility standards",
+        "Performance optimisation and scalability",
+        "SEO expertise and analytics integration"
       ]
     },
     {
       "name": "Soft Skills",
       "keywords": [
-        "Leadership",
-        "Project Management",
-        "Written & Verbal Communication",
-        "Team Collaboration",
-        "Detail Oriented"
+        "Leadership/mentorship",
+        "Project management",
+        "Written & verbal communication",
+        "Team collaboration",
+        "Detail oriented"
       ]
     }
   ]
