@@ -1,16 +1,16 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
-    <title>Alec Rust CV</title>
+    <title>Artem Avetisyan CV</title>
     <meta name="description" content="{{resume.basics.summary}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alec Rust CV" />
+    <meta property="og:title" content="Artem Avetisyan CV" />
     <meta property="og:locale" content="en-GB" />
     <meta property="og:description" content="{{resume.basics.summary}}" />
-    <meta property="og:image" content="https://cv.alecrust.com/alec-rust.jpg" />
-    <meta property="og:image:alt" content="Photo of Alec Rust" />
-    <meta property="og:url" content="https://cv.alecrust.com/" />
+    <meta property="og:image" content="https://cv.artem.rocks/artem.png" />
+    <meta property="og:image:alt" content="Photo of artem avetisyan" />
+    <meta property="og:url" content="https://cv.artem.rocks/" />
     <link rel="stylesheet" href="style.min.css" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   </head>
@@ -18,18 +18,14 @@
     <nav class="Menu">
       <ul class="Menu-list u-cf">
         <li class="Menu-item">
-          <a class="Menu-link" href="alec-rust-cv.pdf">View as PDF</a>
+          <a class="Menu-link" href="artem-avetisyan-cv.pdf">View as PDF</a>
         </li>
         <li class="Menu-item">
-          <a class="Menu-link" href="alec-rust-cv.json">View as JSON</a>
-        </li>
-        <li class="Menu-item">
-          <a class="Menu-link" href="https://github.com/AlecRust/cv">View on
+          <a class="Menu-link" href="https://github.com/artemave/cv">View on
             GitHub</a>
         </li>
         <li class="Menu-item Menu-item--main">
-          <a class="Menu-link" href="https://www.alecrust.com/">Main Site
-            &rsaquo;</a>
+          <a class="Menu-link" href="https://artem.rocks/">Main Site &rsaquo;</a>
         </li>
       </ul>
     </nav>
@@ -43,7 +39,7 @@
                 src="{{picture}}"
                 width="140"
                 height="140"
-                alt="Photo of Alec Rust"
+                alt="Photo of Artem Avetisyan"
                 class="Avatar-image"
               />
             </div>
@@ -191,6 +187,41 @@
                     {{/each}}
                   </ul>
                 {{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </section>
+      {{/if}}
+
+      {{#if resume.projects.length}}
+        <section class="Section">
+          <h2 class="Section-heading">Projects</h2>
+          <div class="Section-content">
+            {{#each resume.projects as |project|}}
+              <div class="u-mb30">
+                <div class="u-sideBySide u-mb10">
+                  <p class="u-textBold">{{project.name}}</p>
+                  <a href="{{project.url}}">{{project.url}}</a>
+                </div>
+                <div class="u-mb10">
+                  <p>{{project.description}}</p>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </section>
+      {{/if}}
+
+      {{#if resume.languages.length}}
+        <section class="Section">
+          <h2 class="Section-heading">Languages</h2>
+          <div class="Section-content">
+            {{#each resume.languages as |language|}}
+              <div>
+                <p class="u-mb10"><span
+                    class="u-textBold"
+                  >{{language.language}}:</span>
+                  {{language.fluency}}</p>
               </div>
             {{/each}}
           </div>

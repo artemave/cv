@@ -11,6 +11,7 @@
 .Section-heading {
   font-size: 20px;
   margin-bottom: 15px;
+  line-height: 22px;
 
   @media (--md-viewport-min) {
     font-size: 24px;

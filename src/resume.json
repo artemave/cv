@@ -1,180 +1,149 @@
 {
   "basics": {
-    "name": "Alec Rust",
+    "name": "Artem Avetisyan",
     "label": "Senior Web Developer",
-    "picture": "alec-rust.jpg",
-    "email": "me@alecrust.com",
-    "website": "https://www.alecrust.com/",
-    "summary": "Experienced front end developer with leadership experience. Dedicated to accessibility, performance, SEO and crafted mobile-first user interfaces.",
+    "picture": "artem.png",
+    "email": "mr@artem.rocks",
+    "website": "https://artem.rocks/",
+    "summary": "Experienced fullstack web developer with over 15 years of hands-on experience in crafting web applications, specializing in Ruby on Rails and Node.js.",
     "location": {
-      "city": "London",
-      "countryCode": "UK"
+      "city": "Thonon-les-Bains",
+      "countryCode": "France"
     },
     "profiles": [
       {
         "network": "GitHub",
-        "username": "AlecRust",
-        "url": "https://github.com/AlecRust"
-      },
-      {
-        "network": "Twitter",
-        "username": "AlecRust",
-        "url": "https://twitter.com/AlecRust"
+        "username": "artemave",
+        "url": "https://github.com/artemave"
       },
       {
         "network": "LinkedIn",
-        "username": "alecrust",
-        "url": "https://www.linkedin.com/in/alecrust/"
+        "username": "artem.avetisyan",
+        "url": "https://www.linkedin.com/in/artem.avetisyan/"
       }
     ]
   },
   "work": [
     {
       "company": "Featurist",
-      "position": "Head of UI/UX",
-      "website": "https://featurist.co.uk/",
-      "startDate": "2016-07-04",
-      "endDate": "2023-06-30",
-      "summary": "At this London-based consultancy, I led the front end and UX development across projects. The diverse work ranged from small MVP mobile apps to large legacy system replacements, including a multi-tenant e-commerce platform.",
+      "position": "Principal developer",
+      "website": "https://archive.featurist.co.uk/",
+      "startDate": "2016-08-01",
+      "endDate": "2023-07-20",
+      "summary": "At this London-based consultancy, I worked on various client projects, developing high quality server and client side code.",
       "highlights": [
-        "Led the UI/UX process for all projects, honing my leadership and project management skills.",
         "Worked on greenfield projects and legacy system replacements, utilising a diverse tech stack from Node.js to Rails.",
-        "Gained insights into various industries through diverse projects, which improved my problem-solving approach."
+        "Gained insights into various industries through diverse projects, which improved my problem-solving approach.",
+        "Worked both solo and as a part of client team, sharing my expertise, and coaching when necessary.",
+        "Took on devops tasks when necessary.",
+        "Contributed to open source, wrote blog posts, and spoke at tech events."
       ]
     },
     {
-      "company": "BBC",
-      "position": "Senior Web Developer",
-      "website": "https://www.bbc.co.uk/bbcthree",
-      "startDate": "2015-06-01",
+      "company": "Funding Circle (UK)",
+      "position": "Software Developer",
+      "website": "https://www.fundingcircle.com/uk/",
+      "startDate": "2015-04-27",
       "endDate": "2016-06-30",
-      "summary": "At my second stint at the BBC I was part of the small development team that built a modern, React-based website to transition BBC Three from a TV channel to the web. We successfully fulfilled diverse stakeholder needs while ensuring an engaging user experience.",
+      "summary": "Helped various teams with product and infrastructure development.",
       "highlights": [
-        "Conducted user testing, which informed the development of interactive features, enhancing user engagement.",
-        "Developed an internal library for efficient and consistent display of BBC content 'cards', streamlining content management.",
-        "Adopted and strengthened my abilities in new technologies such as Node.js, React, webpack and Babel."
+        "Upgraded the main FC Rails app to modern version of ruby (which was previously deemed too hard).",
+        "Developed a way to run the entire FC stack locally, thus boosting productivity across the entire tech department.",
+        "Worked on ETL side of FC app integration with Salesforce."
+      ]
+    },
+    {
+      "company": "The People’s Operator",
+      "position": "Software Developer",
+      "website": "https://www.thepeoplesoperator.com/",
+      "startDate": "2015-03-01",
+      "endDate": "2015-04-01",
+      "summary": "A greenfield project to build a mobile operator store site for their launch in the US."
+    },
+    {
+      "company": "Appear Here",
+      "position": "Software Developer",
+      "website": "https://www.appearhere.co.uk/",
+      "startDate": "2014-10-01",
+      "endDate": "2015-01-01",
+      "summary": "Worked as a part of small agile team on various aspects of the site: searching for places, booking places, landlord onboarding, admin backend and more.",
+      "highlights": [
+        "Worked in a very fast paced startup environment, often working on multiple things at a time."
       ]
     },
     {
       "company": "Shopa",
-      "position": "Director of Front End Engineering",
+      "position": "Software Developer",
       "website": "https://shopa.com/",
-      "startDate": "2014-05-01",
-      "endDate": "2015-04-16",
-      "summary": "As the Director of Front End Engineering at Shopa, I led the small front end development team as the company grew and attracted more funding. We delivered reusable components and a robust front end architecture, enabling the company to scale and adapt to changing business needs.",
+      "startDate": "2012-06-01",
+      "endDate": "2014-08-01",
+      "summary": "Building tech for a disruptive startup.",
       "highlights": [
-        "Oversaw front end implementation and maintenance, alongside dev ops tools ensuring website reliability.",
-        "Navigated the balance between business expectations and technical capabilities, delivering on project objectives.",
-        "Broadened my expertise by learning about technologies such as Go, Elasticsearch, and Gulp."
+        "Worked both solo and as a part of a team.",
+        "Quickly pivoting as the business was actively looking for a winning strategy."
       ]
     },
     {
-      "company": "Shopa",
-      "position": "Front End Developer",
-      "website": "https://shopa.com/",
-      "startDate": "2014-01-13",
-      "endDate": "2014-05-01",
-      "summary": "At Shopa, a social shopping startup, I was instrumental in developing the initial web and mobile applications. I then transitioned into a development-management role to build a capable team and oversee front end development.",
-      "highlights": [
-        "Rapidly iterated on prototypes, establishing a fast feedback loop crucial to the startup phase.",
-        "Experimented with cutting-edge technologies in a collaborative setting.",
-        "Enhanced my skill set with Ruby on Rails and integrated new methodologies like SUIT CSS."
-      ]
-    },
-    {
-      "company": "Universal Music Group",
-      "position": "Front End Developer",
-      "website": "https://www.universalmusic.com/",
-      "startDate": "2011-12-12",
-      "endDate": "2014-01-10",
-      "summary": "At Universal Music Group, I worked on a range of artist and record label websites. I introduced mobile-first best practices into the development workflow and actively contributed to tools and guidelines for the team.",
-      "highlights": [
-        "Led front end development for the Sinfini Music site, delivering a new platform for classical music enthusiasts.",
-        "launched a new website for Mercury Records, enhancing the mobile user experience.",
-        "Created the 'UMG Boilerplate', a tool that streamlined development processes for teams."
-      ]
-    },
-    {
-      "company": "BBC Worldwide",
-      "position": "Commercial Developer",
+      "company": "BBC Public Service",
+      "position": "Developer-in-test",
       "website": "https://www.bbc.com/",
-      "startDate": "2010-10-01",
-      "endDate": "2011-12-01",
-      "summary": "In the BBC.com development team I contributed to the launch and maintenance of an updated BBC home page for international users. I also helped manage analytics and advertising code, and implemented GeoIP and CDN solutions.",
+      "startDate": "2011-05-01",
+      "endDate": "2012-05-01",
+      "summary": "Helped BBC Future Media teams to integrate TDD/BDD into their projects.",
       "highlights": [
-        "Completed Adobe SiteCatalyst Implementation Training to improve site analytics.",
-        "Analysed global traffic patterns using Keynote for insightful user understanding.",
-        "Learned about and implemented continuous integration, TDD, and BDD."
+        "Worked closely with product owners to define software specs",
+        "Developed a testing tool - RestAssured - that is still in use in the BBC."
       ]
     },
     {
-      "company": "BBC Worldwide",
-      "position": "User Interface Developer",
-      "website": "https://www.bbc.co.uk/",
-      "startDate": "2009-07-01",
-      "endDate": "2010-10-01",
-      "summary": "At BBC Worldwide, as part of the Digital Delivery team, I worked on maintaining and enhancing several 'passion sites' including BBC Good Food, Gardeners' World, and Radio Times, focusing on problem-solving and user experience improvement.",
-      "highlights": [
-        "Participated in rebuilding the Top Gear website, optimising navigation and performance.",
-        "Developed and integrated new features and microsites for various BBC websites.",
-        "Expanded knowledge in website localisation and effectively applied GeoIP technologies."
-      ]
-    },
-    {
-      "company": "BBC",
-      "position": "Front End Developer",
-      "website": "https://www.bbc.co.uk/",
-      "startDate": "2008-07-01",
-      "endDate": "2009-07-01",
-      "summary": "Selected for the development team that revamped the BBC domestic homepage into a customisable, widget-based layout, enhancing usability for a large audience.",
-      "highlights": [
-        "Contributed to a homepage redesign that improved usability for millions of daily users.",
-        "Collaborated closely with a skilled team, refining development best practices.",
-        "Dived into dev ops, learning about CDNs and caching strategies for large-scale websites."
-      ]
-    },
-    {
-      "company": "Alec Rust Ltd",
-      "position": "Freelance Developer/Designer",
-      "website": "https://www.alecrust.com/",
-      "startDate": "2004-01-01",
-      "endDate": "2009-06-01",
-      "summary": "As a freelance developer, I became adept in a wide range of areas of web development and catered to diverse client needs, from small businesses to start-ups. I utilised popular CMS platforms and also engineered bespoke solutions.",
-      "highlights": [
-        "Developed websites for a range of businesses, adapting to unique needs.",
-        "Implemented a scalable hosting and monitoring solution for multiple clients.",
-        "Launched a Q&A platform for general contractors, among other projects."
-      ]
-    },
-    {
-      "company": "RAPP",
-      "position": "Web Developer",
-      "website": "https://www.rapp.com/",
-      "startDate": "2007-10-01",
-      "endDate": "2008-06-01",
-      "summary": "At my first job in London, I honed my skills in a fast-paced agency setting, mastering development workflows and quality assurance processes, and contributing to projects for large clients.",
-      "highlights": [
-        "Contributed to the launch of Pfizer’s health information website.",
-        "Built HTML emails for high-profile clients like Apple and Barclays.",
-        "Gained insights into user preferences through formal user testing."
-      ]
+      "company": "And more...",
+      "startDate": "2007-05-01",
+      "endDate": "2011-04-01",
+      "summary": "Mainly Perl web development and a few small Rails contracts."
     }
   ],
   "skills": [
     {
-      "name": "Technical Skills",
+      "name": "Backend",
       "keywords": [
-        "HTML5, CSS3, ES6, Node.js, TypeScript",
-        "React, Vue.js, Stimulus, Next.js, Ruby on Rails",
-        "Tailwind CSS, NextUI, Material UI, Bootstrap etc.",
-        "webpack, esbuild, Babel, ESLint, Prettier, Jest",
-        "CI with GitHub Actions, CircleCI, Semaphore CI etc.",
-        "WordPress LAMP stack with MySQL, PHP, jQuery etc.",
-        "Strong design and UX skills, Sketch, Affinity, Figma etc.",
-        "Web accessibility standards",
-        "Performance optimisation and scalability",
-        "SEO expertise and analytics integration"
+        "Ruby, Ruby-on-Rails",
+        "Node.js, Typescript",
+        "Go",
+        "Python",
+        "Perl",
+        "Postgres, Mysql, Sqlite"
       ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "HTML5, CSS3",
+        "React, Stimulus, Next.js, NextUI",
+        "Tailwind CSS, Styled Components, Bulma",
+        "webpack, esbuild"
+      ]
+    },
+    {
+      "name": "Automated testing",
+      "keywords": [
+        "BDD, Cucumber",
+        "TDD, Rspec, Minitest, Mocha",
+        "Capybara, Selenium"
+      ]
+    },
+    {
+      "name": "DevOps",
+      "keywords": [
+        "AWS, Cloudformation, Lambda, CDK",
+        "Kubernetes",
+        "Heroku",
+        "Docker",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "keywords": ["Dart", "Flutter", "NativeScript", "RubyMotion"]
     },
     {
       "name": "Soft Skills",
@@ -185,6 +154,47 @@
         "Team collaboration",
         "Detail oriented"
       ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "French",
+      "fluency": "Intermediate"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Native"
+    }
+  ],
+  "projects": [
+    {
+      "name": "TransOver",
+      "description": "Super slim and minimalistic translator browser extension. 100K+ Chrome and Firefox users.",
+      "url": "https://chrome.google.com/webstore/detail/transover/aggiiclaiamajehmlfpkjmlbadmkledi"
+    },
+    {
+      "name": "everybody.voting",
+      "description": "Private anonymous forum with voting.",
+      "url": "https://everybody.voting/"
+    },
+    {
+      "name": "StarLogs",
+      "description": "A fun github log viewer, styled as a Star Wars crawl. Brought me to the top of Hackernews.",
+      "url": "http://starlogs.net/"
+    },
+    {
+      "name": "The smallest Rails app",
+      "description": "The smallest Rails app in the World.",
+      "url": "https://thesmallestrailsapp.dev/"
+    },
+    {
+      "name": "Tmux Super Fingers",
+      "description": "Tmux plugin to open file links in Vim",
+      "url": "https://github.com/artemave/tmux_super_fingers"
     }
   ]
 }

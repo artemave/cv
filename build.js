@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer')
 async function copyPublic() {
   try {
     await fs.copy('src/public', 'public')
-    await fs.copy('src/resume.json', 'public/alec-rust-cv.json')
+    await fs.copy('src/resume.json', 'public/artem-avetisyan-cv.json')
     console.log('✅ Public files copied')
   } catch (error) {
     console.error('❌ Error copying public files:', error)
@@ -60,7 +60,7 @@ async function buildPdf() {
       waitUntil: 'networkidle0',
     })
     await page.pdf({
-      path: 'public/alec-rust-cv.pdf',
+      path: 'public/artem-avetisyan-cv.pdf',
       margin: { top: '2cm', right: '2cm', bottom: '2cm', left: '2cm' },
     })
     await browser.close()
