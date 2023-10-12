@@ -1,9 +1,10 @@
 .Container {
   margin-right: auto;
   margin-left: auto;
-  padding: 0 30px;
+  padding: 0 10px;
 
   @media (--md-viewport-min) {
     width: 768px;
+    padding: 0 30px;
   }
 }
