@@ -2,6 +2,7 @@
   margin-right: auto;
   margin-left: auto;
   padding: 0 10px;
+  word-wrap: break-word;
 
   @media (--md-viewport-min) {
     width: 768px;
