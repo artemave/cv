@@ -177,6 +177,11 @@
       "url": "https://chrome.google.com/webstore/detail/transover/aggiiclaiamajehmlfpkjmlbadmkledi"
     },
     {
+      "name": "Firetab 2",
+      "description": "Native mobile app (iOS/Android) to help guitar player read tabs from the phone while playing. Developed in Flutter.",
+      "url": "https://github.com/artemave/firetab2_support"
+    },
+    {
       "name": "everybody.voting",
       "description": "Private anonymous forum with voting.",
       "url": "https://everybody.voting/"
@@ -195,6 +200,11 @@
       "name": "Tmux Super Fingers",
       "description": "Tmux plugin to open file links in Vim",
       "url": "https://github.com/artemave/tmux_super_fingers"
+    },
+    {
+      "name": "Happy Birthday Mary",
+      "description": "A tiny little Roblox game I made for my daughter's birthday.",
+      "url": "https://www.roblox.com/games/11236904229/Happy-Birthday-Mary"
     }
   ]
 }

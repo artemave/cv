@@ -42,7 +42,7 @@
     "*": "prettier --write --ignore-unknown",
     "*.js": "eslint --fix",
     "*.css": "stylelint --fix",
-    "*.{md,hbs}": "cspell --no-must-find-files --no-summary --no-progress",
+    "*.{md,hbs}": "cspell --no-must-find-files --no-progress",
     "src/resume.json": "cspell --no-must-find-files --no-summary --no-progress"
   }
 }
