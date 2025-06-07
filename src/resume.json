@@ -25,6 +25,14 @@
   },
   "work": [
     {
+      "company": "Indigo Lighthouse",
+      "position": "Ruby-on-Rails developer",
+      "website": "https://www.indigolighthouse.com/",
+      "startDate": "2024-03-25",
+      "summary": "Building an e-commerce platform for prescription-based products.",
+      "highlights": []
+    },
+    {
       "company": "Featurist",
       "position": "Principal developer",
       "website": "https://archive.featurist.co.uk/",
