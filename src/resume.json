@@ -180,6 +180,11 @@
   ],
   "projects": [
     {
+      "name": "Thonon-les-Pains",
+      "description": "Artisanal bakery (with product, order and customer management backend)",
+      "url": "https://thonon-les-pains.fr/"
+    },
+    {
       "name": "TransOver",
       "description": "Super slim and minimalistic translator browser extension. 100K+ Chrome and Firefox users.",
       "url": "https://chrome.google.com/webstore/detail/transover/aggiiclaiamajehmlfpkjmlbadmkledi"
