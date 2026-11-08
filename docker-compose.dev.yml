@@ -1,0 +1,18 @@
+include:
+  - ${HOME}/projects/dotfiles/devcontainer/docker-compose.yml
+services:
+  devcontainer:
+    image: dev-base:latest
+    command:
+      - bash
+      - -lc
+      - |
+        npm ci
+        exec zsh
+    volumes:
+      - node_modules:/workspace/node_modules
+    ports:
+      - 4000
+
+volumes:
+  node_modules:
