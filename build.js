@@ -1,10 +1,20 @@
+const http = require('node:http')
+const path = require('node:path')
 const postcss = require('postcss')
 const fs = require('fs-extra')
 const chokidar = require('chokidar')
-const { exec: execCallback } = require('child_process')
-const util = require('util')
-const exec = util.promisify(execCallback)
+const Handlebars = require('handlebars')
+const { parseISO, format } = require('date-fns')
 const puppeteer = require('puppeteer')
+
+const DEV_PORT = 4000
+
+Handlebars.registerHelper('friendlyDate', function (datestamp) {
+  if (datestamp) {
+    return format(parseISO(datestamp), 'do MMM yyyy')
+  }
+  return 'present'
+})
 
 async function copyPublic() {
   try {
@@ -19,9 +29,11 @@ async function copyPublic() {
 
 async function buildHtml() {
   try {
-    await exec(
-      'npx resume export public/index.html --resume src/resume.json --theme .',
+    const template = Handlebars.compile(
+      await fs.readFile('src/resume.hbs', 'utf8'),
     )
+    const resume = await fs.readJson('src/resume.json')
+    await fs.outputFile('public/index.html', template({ resume }))
     console.log('✅ HTML built')
   } catch (error) {
     console.error('❌ Error building HTML:', error)
@@ -77,17 +89,57 @@ async function buildPdf() {
 function watch() {
   console.log('👀 Watching for changes...')
   chokidar
-    .watch('src/styles/**/*.css', { ignoreInitial: true })
+    .watch('src/styles', {
+      ignoreInitial: true,
+      ignored: (path, stats) => stats?.isFile() && !path.endsWith('.css'),
+    })
     .on('all', async (event, path) => {
       console.log(`🛠️ Changes detected in ${path}`)
       await buildStyles()
     })
   chokidar
-    .watch('src/resume.json', { ignoreInitial: true })
+    .watch(['src/resume.json', 'src/resume.hbs'], { ignoreInitial: true })
     .on('all', async (event, path) => {
       console.log(`🛠️ Changes detected in ${path}`)
       await copyPublic()
+      await buildHtml()
     })
+}
+
+const CONTENT_TYPES = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.pdf': 'application/pdf',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+}
+
+function serve() {
+  http
+    .createServer(async (req, res) => {
+      const { pathname } = new URL(req.url, 'http://localhost')
+      const file = path.join(
+        'public',
+        decodeURIComponent(
+          pathname.endsWith('/') ? `${pathname}index.html` : pathname,
+        ),
+      )
+      try {
+        const body = await fs.readFile(file)
+        res.writeHead(200, {
+          'Content-Type': CONTENT_TYPES[path.extname(file)],
+        })
+        res.end(body)
+      } catch (error) {
+        if (error.code !== 'ENOENT') throw error
+        res.writeHead(404)
+        res.end()
+      }
+    })
+    .listen(DEV_PORT, () =>
+      console.log(`🌐 Serving on http://localhost:${DEV_PORT}`),
+    )
 }
 
 async function build() {
@@ -100,6 +152,7 @@ async function build() {
 
   if (process.argv.includes('--watch')) {
     watch()
+    if (process.argv.includes('--serve')) serve()
   } else {
     process.exit()
   }
