@@ -1,11 +1,33 @@
 {
   "basics": {
     "name": "Artem Avetisyan",
-    "label": "Web Developer",
+    "label": "Software Engineer & Technology Consultant",
     "picture": "artem.png",
     "email": "hello@artem.rocks",
     "website": "https://artem.rocks/",
-    "summary": "Experienced fullstack web developer with over 15 years of hands-on experience in crafting web applications, specializing in Ruby on Rails and Node.js.",
+    "summary": "Over 15 years building software, for startups, fintech and the BBC. Today I build with AI agents, so less of my time goes on typing code and more goes on what matters: understanding the problem, designing a solution that holds up, and making sure it is secure, fast and easy to change. I can help your business put LLMs to use, replace the systems that slow it down, and build software that keeps paying off after launch.",
+    "services": [
+      {
+        "name": "Put LLMs to work",
+        "description": "Find where LLMs genuinely help your business, then build them in so they are dependable and safe."
+      },
+      {
+        "name": "Ship fast",
+        "description": "Agent-assisted delivery shortens the path from idea to working software, without cutting corners on quality."
+      },
+      {
+        "name": "Keep it changeable",
+        "description": "Simple, well-tested code that the next person, or the next agent, can safely change."
+      },
+      {
+        "name": "Make it secure",
+        "description": "Review and harden applications, infrastructure and AI integrations: access control, data leaks, prompt injection."
+      },
+      {
+        "name": "Untangle legacy",
+        "description": "Upgrade or replace the systems that hold your business back."
+      }
+    ],
     "location": {
       "city": "Thonon-les-Bains",
       "countryCode": "France"
@@ -191,13 +213,8 @@
     },
     {
       "name": "Firetab 2",
-      "description": "Native mobile app (iOS/Android) to help guitar player read tabs from the phone while playing. Developed in Flutter.",
+      "description": "Mobile app (iOS/Android) to help guitar player read tabs from the phone while playing. Developed in Flutter.",
       "url": "https://github.com/artemave/firetab2_support"
-    },
-    {
-      "name": "everybody.voting",
-      "description": "Private anonymous forum with voting.",
-      "url": "https://everybody.voting/"
     },
     {
       "name": "StarLogs",
@@ -213,11 +230,6 @@
       "name": "Tmux Super Fingers",
       "description": "Tmux plugin to open file links in Vim",
       "url": "https://github.com/artemave/tmux_super_fingers"
-    },
-    {
-      "name": "Happy Birthday Mary",
-      "description": "A tiny little Roblox game I made for my daughter's birthday.",
-      "url": "https://www.roblox.com/games/11236904229/Happy-Birthday-Mary"
     }
   ]
 }

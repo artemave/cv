@@ -88,14 +88,6 @@
             </ul>
           </div>
         </section>
-        <section class="Section">
-          <h2 class="Section-heading">About</h2>
-          <div class="Section-content">
-            {{#if summary}}
-              <p>{{summary}}</p>
-            {{/if}}
-          </div>
-        </section>
         {{#if profiles.length}}
           <section class="Section">
             <h2 class="Section-heading">Profiles</h2>
@@ -120,6 +112,27 @@
                   </li>
                 {{/each}}
               </ul>
+            </div>
+          </section>
+        {{/if}}
+        <section class="Section">
+          <h2 class="Section-heading">About</h2>
+          <div class="Section-content">
+            {{#if summary}}
+              <p>{{summary}}</p>
+            {{/if}}
+          </div>
+        </section>
+        {{#if services.length}}
+          <section class="Section">
+            <h2 class="Section-heading">How I can help</h2>
+            <div class="Section-content">
+              {{#each services as |service|}}
+                <div class="u-mb20">
+                  <p class="u-textBold u-mb10">{{service.name}}</p>
+                  <p>{{service.description}}</p>
+                </div>
+              {{/each}}
             </div>
           </section>
         {{/if}}
@@ -171,46 +184,41 @@
         </section>
       {{/if}}
 
-      {{#if resume.skills.length}}
-        <section class="Section">
-          <h2 class="Section-heading">Skills</h2>
-          <div class="Section-content">
-            {{#each resume.skills as |skill|}}
-              <div>
-                {{#if skill.name}}
-                  <p class="u-textBold u-mb10">{{skill.name}}</p>
-                {{/if}}
-                {{#if skill.keywords.length}}
-                  <ul class="u-bulletedList u-mb10">
-                    {{#each skill.keywords as |keyword|}}
-                      <li>{{keyword}}</li>
-                    {{/each}}
-                  </ul>
-                {{/if}}
-              </div>
-            {{/each}}
+      <section class="Section">
+        <h2 class="Section-heading">Pre-agentic era</h2>
+        <div class="Section-content">
+          <p class="u-mb30">2007–2025. Every line of code written by hand.</p>
+          <div class="StrikeHeading u-mb20">
+            <h3 class="StrikeHeading-heading">Projects</h3>
+            <div class="StrikeHeading-line"></div>
           </div>
-        </section>
-      {{/if}}
-
-      {{#if resume.projects.length}}
-        <section class="Section">
-          <h2 class="Section-heading">Projects</h2>
-          <div class="Section-content">
-            {{#each resume.projects as |project|}}
-              <div class="u-mb30">
-                <div class="u-sideBySide u-mb10">
-                  <p class="u-textBold">{{project.name}}</p>
-                  <a href="{{project.url}}">{{project.url}}</a>
-                </div>
-                <div class="u-mb10">
-                  <p>{{project.description}}</p>
-                </div>
+          {{#each resume.projects as |project|}}
+            <div class="u-mb30">
+              <div class="u-sideBySide u-mb10">
+                <p class="u-textBold">{{project.name}}</p>
+                <a href="{{project.url}}">{{project.url}}</a>
               </div>
-            {{/each}}
+              <div class="u-mb10">
+                <p>{{project.description}}</p>
+              </div>
+            </div>
+          {{/each}}
+          <div class="StrikeHeading u-mb20">
+            <h3 class="StrikeHeading-heading">Skills</h3>
+            <div class="StrikeHeading-line"></div>
           </div>
-        </section>
-      {{/if}}
+          {{#each resume.skills as |skill|}}
+            <div>
+              <p class="u-textBold u-mb10">{{skill.name}}</p>
+              <ul class="u-bulletedList u-mb10">
+                {{#each skill.keywords as |keyword|}}
+                  <li>{{keyword}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/each}}
+        </div>
+      </section>
 
       {{#if resume.languages.length}}
         <section class="Section">
