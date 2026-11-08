@@ -4,7 +4,27 @@
 @custom-media --md-viewport-max (max-width: 768px);
 
 :root {
-  --color-blue: #0060df;
-  --color-dark-gray: #373737;
-  --color-light-gray: #dfdfdf;
+  --color-bg: #fff;
+  --color-surface: #f4f6f6;
+  --color-text: #373737;
+  --color-text-muted: #95a5a6;
+  --color-accent: #0060df;
+  --color-border: #dfdfdf;
+  --color-rule: #f1f1f1;
+
+  color-scheme: light;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #17191b;
+    --color-surface: #202325;
+    --color-text: #dcdedf;
+    --color-text-muted: #8c9a9c;
+    --color-accent: #6ea8ff;
+    --color-border: #33383b;
+    --color-rule: #2a2e31;
+
+    color-scheme: dark;
+  }
 }

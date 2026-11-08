@@ -1,7 +1,7 @@
 .Header {
   padding: 40px 0;
-  border-bottom: 1px solid var(--color-light-gray);
-  background-color: #f4f6f6;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   text-align: center;
 
   @media (--md-viewport-min) {
@@ -13,7 +13,7 @@
 @media print {
   .Header {
     padding: 0 0 20px;
-    background-color: #fff;
+    background-color: var(--color-bg);
   }
 }
 
@@ -22,7 +22,7 @@
 }
 
 .Header-label {
-  color: #95a5a6;
+  color: var(--color-text-muted);
   font-size: 18px;
 
   @media (--sm-viewport-min) {
@@ -31,5 +31,5 @@
 }
 
 .Header-labelSecondary {
-  color: #95a5a6;
+  color: var(--color-text-muted);
 }

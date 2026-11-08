@@ -12,7 +12,7 @@
 }
 
 .StrikeHeading-line {
-  background-color: #f1f1f1;
+  background-color: var(--color-rule);
   height: 1px;
   margin-top: 5px;
   margin-bottom: 5px;
